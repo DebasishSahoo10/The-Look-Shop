@@ -69,3 +69,8 @@
     width: 50%;
   }
 }
+@media screen and (max-width: 431px) {
+  .hero img {
+    margin-left: -30px;
+  }
+}
