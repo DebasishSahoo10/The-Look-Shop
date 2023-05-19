@@ -17,3 +17,8 @@
     font-size: 0.9rem;
   }
 }
+@media screen and (max-width: 431px) {
+  .logo {
+    font-size: 0.7rem;
+  }
+}
