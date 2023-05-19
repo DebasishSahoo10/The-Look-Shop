@@ -1,0 +1,18 @@
+.social-board {
+  width: 100%;
+  height: 300px;
+  background-color: #d0f032;
+  border: 4px solid black;
+  border-top: 0px;
+  box-sizing: border-box;
+  font-family: "Syne", sans-serif;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.social-board div {
+  display: flex;
+  gap: 40px;
+}

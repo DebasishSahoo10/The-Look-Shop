@@ -1,51 +1,90 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  display: grid;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #22201c;
+body {
+  display: grid;
+  grid-template-rows: 80px 60px 300px auto 300px 300px;
+  overflow: hidden;
+  width: 100%;
   min-height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+h1 {
+  font-weight: 800;
+}
+.landingContainer {
+  display: grid;
+}
+a {
+  text-decoration: none;
+  color : black;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline;
+}
+button {
+  cursor: pointer;
+}
+.product-list {
+  width: 95%;
+  padding: 0px 20px 0px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.product-list img {
+  border-radius: 6px 0px 0px 6px;
+  height: 100%;
+}
+.product-list li {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+  gap: 10px;
+  font-family: "Syne", sans-serif;
+  border: 4px solid black;
+  border-radius: 10px;
+  padding-right: 5px;
 }
-
-.App-link {
-  color: #61dafb;
+.product-list li p:nth-child(1) {
+  font-size: larger;
 }
-
-.brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
+.product-list li p:nth-child(2), p:nth-child(3) {
+  font-size: large;
+  font-family: 'Space Grotesk', sans-serif;
 }
-
-.brand-title span {
-  color: #ffde59;
+.product-list button {
+  font-family: "Syne", sans-serif;
+  width: 100%;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-size: 15px;
 }
-
-.brand-description {
-  font-size: 1.4rem;
+.product-list li button:nth-child(1) {
+  background-color: transparent;
 }
-
-.links {
+.product-list li button:nth-child(2) {
+  background-color:  #D0F032;
+}
+.filter-section {
+  width: 95%;
+  padding: 0px 20px 0px 20px;
   display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-family: "Syne", sans-serif;
+  margin-top: 20px;
 }
 
-.links a {
-  color: #d9d9d9;
-  font-size: 1.2rem;
-  margin: 1rem;
-}
+
+
+

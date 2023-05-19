@@ -1,0 +1,8 @@
+.product-card-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.product-card-details a {
+  width: 100%;
+}
