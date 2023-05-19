@@ -6,11 +6,11 @@ export const Hero = () => {
     <div className="hero">
       <div>
         <p>The one-stop shop to buy a look for your metaverse character</p>
-        <NavLink to="/products" state={{gender:""}}><button>Browse All</button></NavLink>
+        <NavLink to="/products"><button>Browse All</button></NavLink>
       </div>
       <div>
         <img
-          src="https://images2.imgbox.com/a4/f7/HExEl48M_o.png"
+          src="https://images2.imgbox.com/fe/45/YZcxtWPA_o.png"
           alt=""
         />
       </div>

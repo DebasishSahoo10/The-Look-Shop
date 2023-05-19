@@ -9,7 +9,7 @@ body {
   display: grid;
   grid-template-rows: 80px 60px 300px auto 300px 300px;
   overflow: hidden;
-  width: 100%;
+  max-width: 100vw;
   min-height: 100vh;
   margin: 0;
   box-sizing: border-box;
@@ -84,7 +84,3 @@ button {
   font-family: "Syne", sans-serif;
   margin-top: 20px;
 }
-
-
-
-
