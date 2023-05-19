@@ -31,8 +31,6 @@ export const Categories = () => {
                     <img
                       src={item.img}
                       alt=""
-                      height={"200px"}
-                      width={"150px"}
                     />
                     <p>{item.name}</p>
                   </li>

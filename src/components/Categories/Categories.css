@@ -25,14 +25,19 @@
   max-width: 150px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
   gap: 10px;
   text-align: center;
 }
 .product-card img {
   border-radius: 6px 6px 0px 0px;
+  object-fit: cover;
+  height: 200px;
+  width: 150px;
 }
 .product-card p {
   margin: 0px;
   max-width: 80%;
+  flex: 1;
 }
