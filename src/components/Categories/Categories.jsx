@@ -25,7 +25,7 @@ export const Categories = () => {
           {state.products
             .filter((item) => item.gender === "men")
             .map((item, index) => {
-              if (index < 3) {
+              if (index < 4) {
                 return (
                   <li key={item.id} className="product-card">
                     <img
@@ -52,7 +52,7 @@ export const Categories = () => {
           {state.products
             .filter((item) => item.gender === "women")
             .map((item, index) => {
-              if (index < 3) {
+              if (index < 4) {
                 return (
                   <li key={item.id} className="product-card">
                     <img
