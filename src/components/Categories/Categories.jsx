@@ -14,7 +14,7 @@ export const Categories = () => {
   }
   return (
     <div className="categories">
-      <div>
+      <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
         <div style={{ display: "flex", gap: "20px" }}>
           <p>MEN CHARACTERS</p>
           <a onClick={()=>handleCategoryNavigate("men")}>
@@ -41,7 +41,7 @@ export const Categories = () => {
             })}
         </div>
       </div>
-      <div>
+      <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
         <div style={{ display: "flex", gap: "20px" }}>
           <p>WOMEN CHARACTERS</p>
           <a onClick={()=>handleCategoryNavigate("women")}>
