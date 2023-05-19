@@ -51,8 +51,23 @@
   }
 }
 @media screen and (max-width: 600px) {
+  h1 {
+    font-size: 28px;
+  }
   .hero img {
-    height: 300px;
-    display: 300px;
+    width: 220px;
+    height: 280px;
+    margin-bottom: -80px;
+  }
+  .hero div:nth-child(1) {
+    font-size: 20px;
+  }
+  .hero button {
+    width: 100px;
+    height: 40px;
+    font-size: 12px;
+  }
+  .hero div:nth-child(2)  {
+    width: 50%;
   }
 }
