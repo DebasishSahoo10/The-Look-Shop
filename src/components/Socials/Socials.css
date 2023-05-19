@@ -16,3 +16,9 @@
   display: flex;
   gap: 40px;
 }
+
+@media screen and (max-width: 600px) {
+  .social-board {
+    font-size: 20px;
+  }
+}

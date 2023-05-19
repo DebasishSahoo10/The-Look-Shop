@@ -13,8 +13,9 @@
 }
 .card-container {
   display: flex;
-  gap: 40px;
+  gap: 20px;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .product-card {
   list-style: none;

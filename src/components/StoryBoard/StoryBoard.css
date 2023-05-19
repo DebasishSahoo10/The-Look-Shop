@@ -24,3 +24,9 @@
   text-align: center;
   margin-top: 0px;
 }
+@media screen and (max-width: 600px) {
+  .story-board p:nth-child(2) {
+    font-size: 22px;
+    max-width: 90%;
+  }
+}
