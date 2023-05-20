@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useReducer} from "react";
-import { fakeFetch } from "./fakeFetch";
 
 
 export const DataContext = createContext()
@@ -26,8 +25,9 @@ export const DataProvider = ({children}) => {
     useEffect(()=>{
         (async()=>{
             try {
-                const serverCall = fakeFetch("fakeFetchSuccess")
-                dispatch({type:"SET_PRODUCTS", payload:serverCall})
+                const serverCall = await fetch("/api/products")
+                const products = await serverCall.json()
+                dispatch({type:"SET_PRODUCTS", payload: products.products})
             } catch(err) {
                 console.log(err)
             }
