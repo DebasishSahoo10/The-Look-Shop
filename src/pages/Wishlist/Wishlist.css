@@ -5,6 +5,10 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
+.wishlist h2 {
+  font-family: "Syne", sans-serif;
+  justify-self: center;
+}
 .wishlist li {
   list-style: none;
   display: flex;
@@ -17,4 +21,10 @@
 }
 button {
   font-size: 15px;
+}
+@media screen and (max-width : 520px) {
+  .wishlist {
+    margin: 0px;
+    margin: 20px auto 20px auto;
+  }
 }

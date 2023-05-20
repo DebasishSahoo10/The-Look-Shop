@@ -12,42 +12,53 @@ export const Wishlist = () => {
       <Logo />
       <Nav />
       <div className="wishlist">
-        {state.wishlist.map((item) => {
-          return (
-            <li key={item.id}>
-              <img src={item.img} alt="" width={"150px"} />
-              <div className="product-card-details">
-                <NavLink to={`/products/${item.id}`}>
-                  <p>{item.name}</p>
-                </NavLink>
-                <p>{item.price} $</p>
-                <p>{item.rating} ⭐</p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "5px" }}>
-                  {state.cart.some((prod) => prod.id === item.id) ? (
-                    <NavLink to="/cart">
-                      <button>Go to Cart</button>
+        {state.wishlist.length === 0 ? (
+          <h2>Your Wishlist Is Empty</h2>
+        ) : (
+          <>
+            {state.wishlist.map((item) => {
+              return (
+                <li key={item.id}>
+                  <img src={item.img} alt="" width={"150px"} />
+                  <div className="product-card-details">
+                    <NavLink to={`/products/${item.id}`}>
+                      <p>{item.name}</p>
                     </NavLink>
-                  ) : (
-                    <button
-                      onClick={() =>
-                        dispatch({ type: "MOVE_TO_CART", payload: item })
-                      }
+                    <p>{item.price} $</p>
+                    <p>{item.rating} ⭐</p>
+                    <div
+                      style={{ display: "flex", flexWrap: "wrap", gap: "5px" }}
                     >
-                      Move to Cart
-                    </button>
-                  )}
-                  <button
-                    onClick={() =>
-                      dispatch({ type: "REMOVE_FROM_WISHLIST", payload: item })
-                    }
-                  >
-                    Remove from Wishlist
-                  </button>
-                </div>
-              </div>
-            </li>
-          );
-        })}
+                      {state.cart.some((prod) => prod.id === item.id) ? (
+                        <NavLink to="/cart">
+                          <button>Go to Cart</button>
+                        </NavLink>
+                      ) : (
+                        <button
+                          onClick={() =>
+                            dispatch({ type: "MOVE_TO_CART", payload: item })
+                          }
+                        >
+                          Move to Cart
+                        </button>
+                      )}
+                      <button
+                        onClick={() =>
+                          dispatch({
+                            type: "REMOVE_FROM_WISHLIST",
+                            payload: item,
+                          })
+                        }
+                      >
+                        Remove from Wishlist
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </>
+        )}
       </div>
     </div>
   );

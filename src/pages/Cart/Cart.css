@@ -67,3 +67,14 @@ li p:nth-child(1) {
   font-family: "Space Grotesk", sans-serif;
   font-size: large;
 }
+
+@media screen and (max-width:843px) {
+  .price-container {
+    width: 550px;
+  }
+}
+@media screen and (max-width:580px) {
+  .price-container {
+    width: 100%;
+  }
+}
