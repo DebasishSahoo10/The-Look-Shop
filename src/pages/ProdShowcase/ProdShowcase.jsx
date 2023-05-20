@@ -18,14 +18,14 @@ export const ProdShowcase = () => {
       <Nav />
       <div className="prod-card-holder">
         <div className="prod-card">
-          <img src={prod.img} alt="" width={"150px"} />
+          <img src={prod.img} alt="" />
           <div className="product-card-details">
             <p>{prod.name}</p>
             <p>{prod.details}</p>
             <p>{prod.price} $</p>
             <p>{prod.rating} ⭐</p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "5px" }}>
-              {state.cart.some((prod) => prod.id === prod.id) ? (
+              {state.cart.some((item) => item.id === prod.id) ? (
                 <NavLink to="/cart">
                   <button>Go to Cart</button>
                 </NavLink>
