@@ -89,10 +89,13 @@ button {
   .product-list {
     padding: 0;
     margin: auto;
+    gap: 10px;
+    margin-bottom: 10px;
   }
   .filter-section {
     padding: 0;
     margin: 10px auto 10px auto;
+    gap: 10px;
   }
   .filter-section div {
     width: 100%;
