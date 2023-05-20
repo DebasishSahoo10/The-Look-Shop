@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router";
-
+import Mockman from "mockman-js";
 
 import "./App.css";
 import { Landing } from "./pages/Landing";
@@ -17,6 +17,7 @@ function App() {
         <Route path="/products/" element={<Products/>}/>
         <Route path="/products/:prodID" element={<ProdShowcase/>}/>
         <Route path="/wishlist" element={<Wishlist/>}/>
+        <Route path="/mockman" element={<Mockman/>}/>
       </Routes>
     </>
   );
