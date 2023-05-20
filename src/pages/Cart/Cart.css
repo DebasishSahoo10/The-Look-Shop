@@ -68,12 +68,16 @@ li p:nth-child(1) {
   font-size: large;
 }
 
-@media screen and (max-width:843px) {
+@media screen and (max-width: 856px) {
   .price-container {
-    width: 550px;
+    width: 570px;
+  }
+  .cart {
+    flex-wrap: wrap-reverse;
+    gap: 10px;
   }
 }
-@media screen and (max-width:580px) {
+@media screen and (max-width: 580px) {
   .price-container {
     width: 100%;
   }
