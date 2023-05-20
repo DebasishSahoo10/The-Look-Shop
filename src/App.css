@@ -84,3 +84,17 @@ button {
   font-family: "Syne", sans-serif;
   margin-top: 20px;
 }
+
+@media screen and (max-width : 860px) {
+  .product-list {
+    padding: 0;
+    margin: auto;
+  }
+  .filter-section {
+    padding: 0;
+    margin: 10px auto 10px auto;
+  }
+  .filter-section div {
+    width: 100%;
+  }
+}

@@ -7,12 +7,9 @@ import { PriceSort } from "../components/Filters/PriceSort";
 import { RatingSlider } from "../components/Filters/RatingSlider";
 import { ProductList } from "../components/ProductList/ProductList";
 
-
 export const Products = () => {
-  
-  
   return (
-    <div style={{display : "grid"}}>
+    <div style={{ display: "grid" }}>
       <Logo />
       <Nav />
       <div>
@@ -20,11 +17,13 @@ export const Products = () => {
           <GenderFilter />
           <CategoryFilter />
           <PriceSort />
-          <RatingSlider />
-          <ClearButton />
+          <div style={{display:"flex", gap:"20px"}}>
+            <RatingSlider />
+            <ClearButton />
+          </div>
         </div>
         <div className="product-list">
-          <ProductList/>
+          <ProductList />
         </div>
       </div>
     </div>
