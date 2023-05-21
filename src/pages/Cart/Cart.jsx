@@ -1,12 +1,21 @@
 import { useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
+
+import "./Cart.css";
 import { Logo } from "../../components/Logo/Logo";
 import { Nav } from "../../components/Nav/Nav";
 import { DataContext } from "../../contexts/DataContext";
-import "./Cart.css";
-import { NavLink } from "react-router-dom";
+import {
+  cartItemDecrement,
+  cartItemIncrement,
+  cartItemRemoval,
+  wishlistHandler
+} from "../../utils/clickHandlers";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export const Cart = () => {
   const { state, dispatch } = useContext(DataContext);
+  const { authToken } = useContext(AuthContext);
   const [discount, setDiscount] = useState(0);
   return (
     <div>
@@ -34,7 +43,7 @@ export const Cart = () => {
                         </NavLink>
 
                         <p>{item.price} $</p>
-                        <p>Quantity : {item.quantity}</p>
+                        <p>Quantity : {item.qty}</p>
                         <div
                           style={{
                             display: "flex",
@@ -45,20 +54,14 @@ export const Cart = () => {
                           <div style={{ display: "flex", gap: "5px" }}>
                             <button
                               onClick={() =>
-                                dispatch({
-                                  type: "INCREASE_QUANTITY",
-                                  payload: item,
-                                })
+                                cartItemIncrement(item, authToken, dispatch)
                               }
                             >
                               +
                             </button>
                             <button
                               onClick={() =>
-                                dispatch({
-                                  type: "DECREASE_QUANTITY",
-                                  payload: item,
-                                })
+                                cartItemDecrement(item, authToken, dispatch)
                               }
                             >
                               -
@@ -66,10 +69,7 @@ export const Cart = () => {
                           </div>
                           <button
                             onClick={() =>
-                              dispatch({
-                                type: "REMOVE_FROM_CART",
-                                payload: item,
-                              })
+                              cartItemRemoval(item, authToken, dispatch)
                             }
                           >
                             Remove from Cart
@@ -80,12 +80,7 @@ export const Cart = () => {
                             <button>Added to Wishlist</button>
                           ) : (
                             <button
-                              onClick={() =>
-                                dispatch({
-                                  type: "ADD_TO_WISHLIST",
-                                  payload: item,
-                                })
-                              }
+                              onClick={() =>wishlistHandler(item, authToken, dispatch)}
                             >
                               Add to Wishlist
                             </button>
@@ -106,7 +101,7 @@ export const Cart = () => {
               <p>
                 Total Amount :{" "}
                 {state.cart.reduce(
-                  (acc, item) => (acc += item.price * item.quantity),
+                  (acc, item) => (acc += item.price * item.qty),
                   0
                 ) - discount}
                 $
