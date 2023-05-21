@@ -10,7 +10,7 @@ import { cartHandler, wishlistHandler } from "../../utils/clickHandlers";
 export const ProductList = () => {
   const { state, dispatch } = useContext(DataContext);
   const { filters } = useContext(FilterContext);
-  const {authToken} = useContext(AuthContext)
+  const { authToken, isLoggedin } = useContext(AuthContext);
   let prodDB = state.products
     .filter(
       (item) =>
@@ -28,7 +28,7 @@ export const ProductList = () => {
         return;
       }
     });
-  
+
   return (
     <>
       {prodDB.map((item) => {
@@ -42,18 +42,31 @@ export const ProductList = () => {
               <p>{item.price} $</p>
               <p>{item.rating} ⭐</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "5px" }}>
-                {state.cart.some((prod) => prod.id === item.id) ? (
-                  <NavLink to="/cart">
-                    <button>Go to Cart</button>
-                  </NavLink>
+                {isLoggedin ? (
+                  <>
+                    {state.cart.some((prod) => prod.id === item.id) ? (
+                      <NavLink to="/cart">
+                        <button>Go to Cart</button>
+                      </NavLink>
+                    ) : (
+                      <button
+                        onClick={() => cartHandler(item, authToken, dispatch)}
+                      >
+                        Add to Cart
+                      </button>
+                    )}
+                  </>
                 ) : (
-                  <button
-                    onClick={() => cartHandler(item, authToken, dispatch)}
-                  >
-                    Add to Cart
-                  </button>
+                  <>
+                    <NavLink to="/login">
+                      <button>Add to Cart</button>
+                    </NavLink>
+                  </>
                 )}
-                {state.wishlist.some((prod) => prod.id === item.id) ? (
+
+                {isLoggedin ? (
+                  <>
+                    {state.wishlist.some((prod) => prod.id === item.id) ? (
                   <button>Added to Wishlist</button>
                 ) : (
                   <button
@@ -61,6 +74,14 @@ export const ProductList = () => {
                   >
                     Add to Wishlist
                   </button>
+                )}
+                  </>
+                ) : (
+                  <>
+                    <NavLink to="/login">
+                      <button className="wishlist-btn">Add to wishlist</button>
+                    </NavLink>
+                  </>
                 )}
               </div>
             </div>
