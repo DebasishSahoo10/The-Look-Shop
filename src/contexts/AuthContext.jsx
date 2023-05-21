@@ -15,10 +15,6 @@ export const AuthProvider = ({ children }) => {
   const [isLoggedin, setIsLoggedin] = useState(false)
   const navigate = useNavigate()
   const location = useLocation()
-  const handleLogin = () => {
-    setIsLoggedin(true)
-    navigate(location?.state?.from?.pathname)
-  }
   useEffect(() => {
     (async () => {
       try {
@@ -28,12 +24,12 @@ export const AuthProvider = ({ children }) => {
         });
         const token = await authCall.json()
         token.encodedToken && setAuthToken(token.encodedToken)
-        token.encodedToken && handleLogin()
+        token.encodedToken && setIsLoggedin(true)
+        token.encodedToken && navigate(location?.state?.from?.pathname)
       } catch (error) {
         console.log(error);
       }
     })();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loginState]);
+  }, [loginState, navigate, location?.state?.from?.pathname]);
   return <AuthContext.Provider value={{authToken, loginDispatch, isLoggedin}}>{children}</AuthContext.Provider>;
 };
