@@ -4,9 +4,16 @@ import { Nav } from "../../components/Nav/Nav";
 import { DataContext } from "../../contexts/DataContext";
 import { NavLink } from "react-router-dom";
 import "./Wishlist.css";
+import { cartHandler, wishlisItemRemoval } from "../../utils/clickHandlers";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export const Wishlist = () => {
-  const { state, dispatch } = useContext(DataContext);
+  const { state, dispatch } = useContext(DataContext)
+  const {authToken} = useContext(AuthContext)
+  const moveToCartHandler = (item, authToken, dispatch) => {
+    cartHandler(item, authToken, dispatch)
+    wishlisItemRemoval(item, authToken, dispatch)
+  }
   return (
     <div>
       <Logo />
@@ -35,20 +42,13 @@ export const Wishlist = () => {
                         </NavLink>
                       ) : (
                         <button
-                          onClick={() =>
-                            dispatch({ type: "MOVE_TO_CART", payload: item })
-                          }
+                          onClick={() =>moveToCartHandler(item, authToken, dispatch)}
                         >
                           Move to Cart
                         </button>
                       )}
                       <button
-                        onClick={() =>
-                          dispatch({
-                            type: "REMOVE_FROM_WISHLIST",
-                            payload: item,
-                          })
-                        }
+                        onClick={() =>wishlisItemRemoval(item, authToken, dispatch)}
                       >
                         Remove from Wishlist
                       </button>
