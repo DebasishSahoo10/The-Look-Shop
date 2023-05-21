@@ -33,6 +33,7 @@ export const AuthProvider = ({ children }) => {
         console.log(error);
       }
     })();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loginState]);
   return <AuthContext.Provider value={{authToken, loginDispatch, isLoggedin}}>{children}</AuthContext.Provider>;
 };
