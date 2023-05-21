@@ -25,6 +25,7 @@ export const ProductList = () => {
       } else if (filters.priceSort === "HTL") {
         return b.price - a.price;
       } else {
+        // eslint-disable-next-line array-callback-return
         return;
       }
     });
