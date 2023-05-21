@@ -18,7 +18,7 @@ export const Wishlist = () => {
     <div>
       <Logo />
       <Nav />
-      <h2 className="wishlist-h2">Your Wishlist Is Empty</h2>
+      {state.wishlist.length===0 && <h2 className="wishlist-h2">Your Wishlist Is Empty</h2>}
       <div className="wishlist">
         {state.wishlist.length > 0 && (
           <>
