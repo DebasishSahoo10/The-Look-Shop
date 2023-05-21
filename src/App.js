@@ -7,17 +7,34 @@ import { Products } from "./pages/Products";
 import { Cart } from "./pages/Cart/Cart";
 import { Wishlist } from "./pages/Wishlist/Wishlist";
 import { ProdShowcase } from "./pages/ProdShowcase/ProdShowcase";
+import { Login } from "./pages/Login/Login";
+import { RequiresAuth } from "./components/RequiresAuth";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Landing/>}/>
-        <Route path="/cart" element={<Cart/>}/>
-        <Route path="/products/" element={<Products/>}/>
-        <Route path="/products/:prodID" element={<ProdShowcase/>}/>
-        <Route path="/wishlist" element={<Wishlist/>}/>
-        <Route path="/mockman" element={<Mockman/>}/>
+        <Route path="/" element={<Landing />} />
+        <Route
+          path="/cart"
+          element={
+            <RequiresAuth>
+              <Cart />
+            </RequiresAuth>
+          }
+        />
+        <Route path="/products/" element={<Products />} />
+        <Route path="/products/:prodID" element={<ProdShowcase />} />
+        <Route
+          path="/wishlist"
+          element={
+            <RequiresAuth>
+              <Wishlist />
+            </RequiresAuth>
+          }
+        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/mockman" element={<Mockman />} />
       </Routes>
     </>
   );
