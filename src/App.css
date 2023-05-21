@@ -69,11 +69,8 @@ button {
   margin-bottom: 5px;
   font-size: 15px;
 }
-.product-list li button:nth-child(1) {
-  background-color: transparent;
-}
-.product-list li button:nth-child(2) {
-  background-color:  #D0F032;
+.product-list .wishlist-btn {
+  background-color: #D0F032;
 }
 .filter-section {
   width: 95%;
@@ -83,6 +80,13 @@ button {
   flex-wrap: wrap;
   font-family: "Syne", sans-serif;
   margin-top: 20px;
+}
+h2 {
+  font-family: "Syne", sans-serif;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 50px;
 }
 
 @media screen and (max-width : 860px) {
