@@ -61,7 +61,7 @@ export const Cart = () => {
                             </button>
                             <button
                               onClick={() =>
-                                cartItemDecrement(item, authToken, dispatch)
+                                item.qty > 1 && cartItemDecrement(item, authToken, dispatch)
                               }
                             >
                               -
