@@ -1,5 +1,7 @@
 import {NavLink} from 'react-router-dom'
 import "./Nav.css"
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const getNavLinkStyle = ({isActive}) => {
   if (isActive) {
@@ -11,6 +13,7 @@ const getNavLinkStyle = ({isActive}) => {
 };
 
 export const Nav = () => {
+  const {isLoggedin} = useContext(AuthContext)
   return (
     <nav className="nav">
       <div>
@@ -20,7 +23,7 @@ export const Nav = () => {
         <NavLink to="/wishlist" style={getNavLinkStyle}><p>Wishlist</p></NavLink>
       </div>
       <div>
-        <button>Log In</button>
+        <NavLink to="/login"><button>{isLoggedin ? "Logged In" : "Log In"}</button></NavLink>
       </div>
     </nav>
   );
