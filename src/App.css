@@ -81,12 +81,13 @@ button {
   font-family: "Syne", sans-serif;
   margin-top: 20px;
 }
-h2 {
+.wishlist-h2 {
   font-family: "Syne", sans-serif;
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
   margin-top: 50px;
+  text-align: center;
 }
 
 @media screen and (max-width : 860px) {

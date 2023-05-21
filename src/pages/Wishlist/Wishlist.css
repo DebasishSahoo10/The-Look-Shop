@@ -6,10 +6,6 @@
   gap: 20px;
   background-color: aquamarine;
 }
-.wishlist h2 {
-  font-family: "Syne", sans-serif;
-  justify-self: center;
-}
 .wishlist li {
   list-style: none;
   display: flex;
