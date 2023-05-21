@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
+  background-color: aquamarine;
 }
 .wishlist h2 {
   font-family: "Syne", sans-serif;
