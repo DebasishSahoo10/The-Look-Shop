@@ -1,12 +1,16 @@
 import { useContext } from "react";
-import { DataContext } from "../../contexts/DataContext";
 import { NavLink } from "react-router-dom";
+
+import "./ProductList.css";
 import { FilterContext } from "../../contexts/FilterContext";
-import "./ProductList.css"
+import { AuthContext } from "../../contexts/AuthContext";
+import { DataContext } from "../../contexts/DataContext";
+import { cartHandler, wishlistHandler } from "../../utils/clickHandlers";
 
 export const ProductList = () => {
   const { state, dispatch } = useContext(DataContext);
   const { filters } = useContext(FilterContext);
+  const {authToken} = useContext(AuthContext)
   let prodDB = state.products
     .filter(
       (item) =>
@@ -24,6 +28,7 @@ export const ProductList = () => {
         return;
       }
     });
+  
   return (
     <>
       {prodDB.map((item) => {
@@ -43,9 +48,7 @@ export const ProductList = () => {
                   </NavLink>
                 ) : (
                   <button
-                    onClick={() =>
-                      dispatch({ type: "ADD_TO_CART", payload: item })
-                    }
+                    onClick={() => cartHandler(item, authToken, dispatch)}
                   >
                     Add to Cart
                   </button>
@@ -54,9 +57,7 @@ export const ProductList = () => {
                   <button>Added to Wishlist</button>
                 ) : (
                   <button
-                    onClick={() =>
-                      dispatch({ type: "ADD_TO_WISHLIST", payload: item })
-                    }
+                    onClick={() => wishlistHandler(item, authToken, dispatch)}
                   >
                     Add to Wishlist
                   </button>
