@@ -18,7 +18,7 @@ export const Login = () => {
       <Nav />
       <div className="login-holder">
         {isLoggedin ? (
-          <h2>You are alrredy Logged In</h2>
+          <h2>You are already Logged In</h2>
         ) : (
           <>
             <p style={{ alignSelf: "center" }}>Please Login First</p>
