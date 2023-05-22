@@ -12,7 +12,7 @@ export const GenderFilter = () => {
         }
     }
     return (
-        <div className="gender-filter">
+        <div className="filter_gender">
             <p>Gender</p>
             <input
               type="checkbox"
