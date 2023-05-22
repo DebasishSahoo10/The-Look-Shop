@@ -9,7 +9,7 @@ export const PriceSort = () => {
   }
   return (
     <>
-      <div className="price-sort">
+      <div className="filter_price-sort">
         <p>Price Sort</p>
         <div>
           <input
