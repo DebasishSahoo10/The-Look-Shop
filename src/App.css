@@ -57,7 +57,7 @@ button {
 .product-list li p:nth-child(1) {
   font-size: larger;
 }
-.product-list li p:nth-child(2), p:nth-child(3) {
+.product-list li p:nth-child(2) p:nth-child(3) {
   font-size: large;
   font-family: 'Space Grotesk', sans-serif;
 }
