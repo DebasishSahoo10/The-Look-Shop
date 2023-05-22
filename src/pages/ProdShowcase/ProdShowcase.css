@@ -6,6 +6,7 @@
   border-radius: 10px;
   /* height: auto; */
   margin: 20px;
+  padding-right: 10px;
 }
 .prod-card img {
   width: 150px;
@@ -38,8 +39,5 @@
   width: 100%;
   font-family: "Syne", sans-serif;
   font-size: 15px;
-}
-.prod-card button:nth-child(2) {
-  background-color: #d0f032;
   margin-bottom: 5px;
 }
