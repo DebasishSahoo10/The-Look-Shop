@@ -15,7 +15,7 @@
   max-width: 450px;
   padding-right: 20px;
 }
-button {
+.wishlist button {
   font-size: 15px;
 }
 @media screen and (max-width : 520px) {

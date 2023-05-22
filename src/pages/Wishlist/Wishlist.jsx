@@ -26,7 +26,7 @@ export const Wishlist = () => {
               return (
                 <li key={item.id}>
                   <img src={item.img} alt="" width={"150px"} />
-                  <div className="product-card-details">
+                  <div className="product-list_card-details">
                     <NavLink to={`/products/${item.id}`}>
                       <p>{item.name}</p>
                     </NavLink>
