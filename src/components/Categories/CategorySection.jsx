@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import "./Categories.css";
 import { DataContext } from "../../contexts/DataContext";
@@ -28,7 +28,7 @@ export const CategorySection = ({ gender }) => {
           .map((item) => (
             <li key={item.id} className="category_card">
               <img src={item.img} alt={`${item.name}`} />
-              <p>{item.name}</p>
+              <p><NavLink to={`/products/${item.id}`}>{item.name}</NavLink></p>
             </li>
           ))}
       </div>
