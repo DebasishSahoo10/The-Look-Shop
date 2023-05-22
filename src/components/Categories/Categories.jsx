@@ -3,7 +3,7 @@ import { CategorySection } from "./CategorySection";
 
 export const Categories = () => {
   return (
-    <div className="categories">
+    <div className="category">
       <CategorySection gender="men" />
       <CategorySection gender="women" />
     </div>
