@@ -27,12 +27,12 @@
 .filter_category,
 .price-sort,
 .rating-slider,
-.clear-button {
+.filter_clear-button {
   border: 4px solid black;
   border-radius: 10px;
   padding: 10px;
 }
-.clear-button button {
+.filter_clear-button button {
   font-size: larger;
   font-family: "Syne", sans-serif;
   border: 2px solid black;
@@ -41,7 +41,7 @@
   border-radius: 5px;
   padding: 5px 10px 5px 10px;
 }
-.clear-button {
+.filter_clear-button {
   display: flex;
   justify-content: center;
   align-items: center;
