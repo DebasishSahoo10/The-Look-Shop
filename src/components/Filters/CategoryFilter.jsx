@@ -1,4 +1,5 @@
 import { useContext } from "react";
+
 import { DataContext } from "../../contexts/DataContext";
 import { FilterContext } from "../../contexts/FilterContext";
 import "./Filters.css"
@@ -21,7 +22,7 @@ export const CategoryFilter = () => {
   }
   return (
     <>
-      <div className="category-filter">
+      <div className="filter_category">
         <p>Category</p>
         <div>
           {categoriesList.map((itemCat) => {
@@ -29,7 +30,7 @@ export const CategoryFilter = () => {
               <li key={itemCat}>
                 <input
                   type="checkbox"
-                  name=""
+                  name={`${itemCat} checkbox`}
                   id={itemCat}
                   checked={filters.category.includes(itemCat)}
                   onClick={() =>handleCategoryClick(itemCat)}

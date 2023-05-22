@@ -1,4 +1,4 @@
-.category-filter div {
+.filter_category div {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -24,7 +24,7 @@
 }
 
 .gender-filter,
-.category-filter,
+.filter_category,
 .price-sort,
 .rating-slider,
 .clear-button {
