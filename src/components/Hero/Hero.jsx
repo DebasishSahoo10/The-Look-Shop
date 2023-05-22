@@ -11,7 +11,7 @@ export const Hero = () => {
       <div>
         <img
           src="https://images2.imgbox.com/fe/45/YZcxtWPA_o.png"
-          alt=""
+          alt="three models wearing three different looks"
         />
       </div>
     </div>
