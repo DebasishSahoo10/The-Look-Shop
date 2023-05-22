@@ -62,14 +62,22 @@ li p:nth-child(1) {
   border-radius: 10px;
   padding: 10px;
   height: max-content;
-  width: 25git0px;
+  width: 250px;
 }
 .price-container p {
   font-family: "Space Grotesk", sans-serif;
   font-size: large;
   max-width: 100%;
 }
-
+.cart-btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.cart-btn-container div {
+  display: flex;
+  gap: 5px;
+}
 @media screen and (max-width: 856px) {
   .price-container {
     width: 570px;
