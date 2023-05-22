@@ -32,9 +32,7 @@ export const Wishlist = () => {
                     </NavLink>
                     <p>{item.price} $</p>
                     <p>{item.rating} ⭐</p>
-                    <div
-                      style={{ display: "flex", flexWrap: "wrap", gap: "5px" }}
-                    >
+                    <div className="wishlist-btn-container">
                       {state.cart.some((prod) => prod.id === item.id) ? (
                         <NavLink to="/cart">
                           <button>Go to Cart</button>
