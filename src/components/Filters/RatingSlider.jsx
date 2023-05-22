@@ -9,7 +9,7 @@ export const RatingSlider = () => {
   }
   return (
     <>
-      <div className="rating-slider">
+      <div className="filter_rating-slider">
         <p>Rating</p>
         <input
           type="range"

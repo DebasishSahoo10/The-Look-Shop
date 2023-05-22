@@ -26,7 +26,7 @@
 .filter_gender,
 .filter_category,
 .filter_price-sort,
-.rating-slider,
+.filter_rating-slider,
 .filter_clear-button {
   border: 4px solid black;
   border-radius: 10px;
