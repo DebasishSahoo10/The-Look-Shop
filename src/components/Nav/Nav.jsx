@@ -1,6 +1,7 @@
 import {NavLink} from 'react-router-dom'
-import "./Nav.css"
 import { useContext } from 'react';
+
+import "./Nav.css"
 import { AuthContext } from '../../contexts/AuthContext';
 
 const getNavLinkStyle = ({isActive}) => {
