@@ -4,16 +4,12 @@ import { Nav } from "../../components/Nav/Nav";
 import { DataContext } from "../../contexts/DataContext";
 import { NavLink } from "react-router-dom";
 import "./Wishlist.css";
-import { cartHandler, wishlisItemRemoval } from "../../utils/clickHandlers";
+import { moveToCartHandler, wishlisItemRemoval } from "../../utils/clickHandlers";
 import { AuthContext } from "../../contexts/AuthContext";
-
 export const Wishlist = () => {
   const { state, dispatch } = useContext(DataContext)
   const {authToken} = useContext(AuthContext)
-  const moveToCartHandler = (item, authToken, dispatch) => {
-    cartHandler(item, authToken, dispatch)
-    wishlisItemRemoval(item, authToken, dispatch)
-  }
+  
   return (
     <div>
       <Logo />
