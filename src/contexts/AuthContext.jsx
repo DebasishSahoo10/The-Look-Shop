@@ -31,5 +31,5 @@ export const AuthProvider = ({ children }) => {
       }
     })();
   }, [loginState, navigate, location?.state?.from?.pathname]);
-  return <AuthContext.Provider value={{authToken, loginDispatch, isLoggedin}}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{authToken, loginDispatch, isLoggedin, setIsLoggedin, setAuthToken}}>{children}</AuthContext.Provider>;
 };

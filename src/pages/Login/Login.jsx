@@ -7,18 +7,26 @@ import "./Login.css";
 export const Login = () => {
   const [userInput, setUserInput] = useState({ email: "", password: "" });
   const [error, setError] = useState(false);
-  const { loginDispatch, authToken, isLoggedin } = useContext(AuthContext);
+  const { loginDispatch, authToken, isLoggedin, setIsLoggedin, setAuthToken } = useContext(AuthContext);
   const loginClickHandler = () => {
     loginDispatch({ type: "SET_USER", payload: userInput });
     setError(true);
   };
+  const handleLogout = () => {
+    loginDispatch({type : "SET_USER", payload : {email: "", password: ""}})
+    setIsLoggedin(false)
+    setAuthToken()
+  }
   return (
     <>
       <Logo />
       <Nav />
       <div className="login-holder">
         {isLoggedin ? (
-          <h2>You are already Logged In</h2>
+          <>
+            <h2>You are already Logged In</h2>
+            <button onClick={()=>handleLogout()}>Log Out</button>
+          </>
         ) : (
           <>
             <p style={{ alignSelf: "center" }}>Please Login First</p>
