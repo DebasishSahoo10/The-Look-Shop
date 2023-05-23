@@ -1,4 +1,7 @@
-export const cartHandler = (item, authToken, dispatch) => {
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+export const cartHandler = (item, authToken, dispatch, isToast=true) => {
   (async () => {
     try {
       const cartCall = await fetch("/api/user/cart", {
@@ -14,9 +17,21 @@ export const cartHandler = (item, authToken, dispatch) => {
       console.log(err);
     }
   })();
+  if (isToast) {
+    toast("➕ Added to Cart", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark"
+    })
+  }
 };
 
-export const cartItemRemoval = (item, authToken, dispatch) => {
+export const cartItemRemoval = (item, authToken, dispatch, isToast=true) => {
   (async () => {
     try {
       const cartCall = await fetch("/api/user/cart/" + item._id, {
@@ -31,9 +46,21 @@ export const cartItemRemoval = (item, authToken, dispatch) => {
       console.log(err);
     }
   })();
+  if (isToast) {
+    toast("➖ Removed from Cart", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark"
+    })
+  }
 };
 
-export const wishlistHandler = (item, authToken, dispatch) => {
+export const wishlistHandler = (item, authToken, dispatch, isToast=true) => {
   (async () => {
     try {
       const wishlistCall = await fetch("/api/user/wishlist", {
@@ -49,16 +76,28 @@ export const wishlistHandler = (item, authToken, dispatch) => {
       console.log(err);
     }
   })();
+  if (isToast) {
+    toast("❤️ Added to Wishlist", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark"
+    })
+  }
 };
 
-export const wishlisItemRemoval = (item, authToken, dispatch) => {
+export const wishlisItemRemoval = (item, authToken, dispatch, isToast=true) => {
   (async () => {
     try {
       const wishlistCall = await fetch("/api/user/wishlist/" + item._id, {
         method: "DELETE",
         headers: {
           authorization: authToken,
-        }
+        },
       });
       const newWishlist = await wishlistCall.json();
       dispatch({ type: "SET_WISHLIST", payload: newWishlist.wishlist });
@@ -66,6 +105,18 @@ export const wishlisItemRemoval = (item, authToken, dispatch) => {
       console.log(err);
     }
   })();
+  if (isToast) {
+    toast("💔 Removed from Wishlist", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark"
+    })
+  }
 };
 
 export const cartItemIncrement = (item, authToken, dispatch) => {
@@ -103,3 +154,18 @@ export const cartItemDecrement = (item, authToken, dispatch) => {
     }
   })();
 };
+
+export const moveToCartHandler = (item, authToken, dispatch) => {
+  cartHandler(item, authToken, dispatch, false)
+  wishlisItemRemoval(item, authToken, dispatch, false)
+  toast("🌟 Moved to Cart", {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark"
+  });
+}
