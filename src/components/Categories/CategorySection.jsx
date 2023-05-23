@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { Suspense, useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 import "./Categories.css";
@@ -17,7 +17,11 @@ export const CategorySection = ({ gender }) => {
     <div className="category_section">
       <div className="category_header">
         <p>{gender.toUpperCase()} CHARACTERS</p>
-        <p className="category_show-all" onClick={() => handleCategoryNavigate(gender)} aria-label={`Show all ${gender} characters`}>
+        <p
+          className="category_show-all"
+          onClick={() => handleCategoryNavigate(gender)}
+          aria-label={`Show all ${gender} characters`}
+        >
           SHOW ALL
         </p>
       </div>
@@ -27,8 +31,12 @@ export const CategorySection = ({ gender }) => {
           .slice(0, 4)
           .map((item) => (
             <li key={item.id} className="category_card">
-              <img src={item.img} alt={`${item.name}`} />
-              <p><NavLink to={`/products/${item.id}`}>{item.name}</NavLink></p>
+              <Suspense fallback={<p>Loading..</p>}>
+                <img src={item.img} alt={`${item.name}`} />
+              </Suspense>
+              <p>
+                <NavLink to={`/products/${item.id}`}>{item.name}</NavLink>
+              </p>
             </li>
           ))}
       </div>
