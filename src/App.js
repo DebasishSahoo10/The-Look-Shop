@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router";
 import Mockman from "mockman-js";
 
 import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 import { Landing } from "./pages/Landing";
 import { Products } from "./pages/Products";
 import { Cart } from "./pages/Cart/Cart";
@@ -9,6 +10,7 @@ import { Wishlist } from "./pages/Wishlist/Wishlist";
 import { ProdShowcase } from "./pages/ProdShowcase/ProdShowcase";
 import { Login } from "./pages/Login/Login";
 import { RequiresAuth } from "./components/RequiresAuth";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -36,6 +38,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/mockman" element={<Mockman />} />
       </Routes>
+      <ToastContainer/>
     </>
   );
 }
