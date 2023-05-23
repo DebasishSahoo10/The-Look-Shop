@@ -10,6 +10,7 @@ const handleFilters = (state, action) => {
         case "REMOVE_CATEGORY" : return {...state, category: [...state.category.filter((category) => category !== action.payload)]}
         case "ADD_PRICE_SORT" : return {...state, priceSort : action.payload}
         case "ADD_RATING" : return {...state, rating : action.payload}
+        case "ADD_SEARCH" : return {...state, search : action.payload.toLowerCase()}
         case "CLEAR_ALL_FILTERS" : return {gender: "",category: [],priceSort: "",rating: 0}
         default : return state
     }
@@ -21,6 +22,7 @@ export const FilterProvider = ({ children }) => {
     category: [],
     priceSort: "",
     rating: 0,
+    search : ""
   });
   return <FilterContext.Provider value={{filters, dispatchFilters}}>{children}</FilterContext.Provider>;
 };

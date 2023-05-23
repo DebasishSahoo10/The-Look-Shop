@@ -6,6 +6,7 @@ import { GenderFilter } from "../components/Filters/GenderFilter";
 import { PriceSort } from "../components/Filters/PriceSort";
 import { RatingSlider } from "../components/Filters/RatingSlider";
 import { ProductList } from "../components/ProductList/ProductList";
+import { SearchBar } from "../components/Filters/SearchBar";
 
 export const Products = () => {
   return (
@@ -17,6 +18,7 @@ export const Products = () => {
           <GenderFilter />
           <CategoryFilter />
           <PriceSort />
+          <SearchBar/>
           <div style={{display:"flex", gap:"20px"}}>
             <RatingSlider />
             <ClearButton />
