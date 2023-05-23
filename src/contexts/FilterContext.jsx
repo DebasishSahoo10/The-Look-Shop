@@ -11,7 +11,7 @@ const handleFilters = (state, action) => {
         case "ADD_PRICE_SORT" : return {...state, priceSort : action.payload}
         case "ADD_RATING" : return {...state, rating : action.payload}
         case "ADD_SEARCH" : return {...state, search : action.payload.toLowerCase()}
-        case "CLEAR_ALL_FILTERS" : return {gender: "",category: [],priceSort: "",rating: 0}
+        case "CLEAR_ALL_FILTERS" : return {gender: "",category: [],priceSort: "",rating: 0, search : ""}
         default : return state
     }
 }
