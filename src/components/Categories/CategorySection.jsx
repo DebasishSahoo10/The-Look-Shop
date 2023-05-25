@@ -1,4 +1,4 @@
-import { Suspense, useContext } from "react";
+import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 import "./Categories.css";
@@ -31,9 +31,7 @@ export const CategorySection = ({ gender }) => {
           .slice(0, 4)
           .map((item) => (
             <li key={item.id} className="category_card">
-              <Suspense fallback={<p>Loading..</p>}>
-                <img src={item.img} alt={`${item.name}`} />
-              </Suspense>
+              <img src={item.img} alt={`${item.name}`} />
               <p>
                 <NavLink to={`/products/${item.id}`}>{item.name}</NavLink>
               </p>
