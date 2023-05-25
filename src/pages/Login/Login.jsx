@@ -3,20 +3,25 @@ import { Logo } from "../../components/Logo/Logo";
 import { Nav } from "../../components/Nav/Nav";
 import { AuthContext } from "../../contexts/AuthContext";
 import "./Login.css";
+import { NavLink } from "react-router-dom";
+import { PasswordInput } from "../../components/Inputs/PasswordInput";
+import { EmailInput } from "../../components/Inputs/EmailInput";
+
 
 export const Login = () => {
   const [userInput, setUserInput] = useState({ email: "", password: "" });
   const [error, setError] = useState(false);
-  const { loginDispatch, authToken, isLoggedin, setIsLoggedin, setAuthToken } = useContext(AuthContext);
+  const { loginDispatch, authToken, isLoggedin, setIsLoggedin, setAuthToken } =
+    useContext(AuthContext);
   const loginClickHandler = () => {
     loginDispatch({ type: "SET_USER", payload: userInput });
     setError(true);
   };
   const handleLogout = () => {
-    loginDispatch({type : "SET_USER", payload : {email: "", password: ""}})
-    setIsLoggedin(false)
-    setAuthToken()
-  }
+    loginDispatch({ type: "SET_USER", payload: { email: "", password: "" } });
+    setIsLoggedin(false);
+    setAuthToken();
+  };
   return (
     <>
       <Logo />
@@ -25,36 +30,13 @@ export const Login = () => {
         {isLoggedin ? (
           <>
             <h2>You are already Logged In</h2>
-            <button onClick={()=>handleLogout()}>Log Out</button>
+            <button onClick={() => handleLogout()}>Log Out</button>
           </>
         ) : (
           <>
-            <p style={{ alignSelf: "center" }}>Please Login First</p>
-            <div>
-              <label htmlFor="email">Email :</label>
-              <input
-                type="text"
-                name="email-input"
-                id="email"
-                onChange={(e) =>
-                  setUserInput((prev) => ({ ...prev, email: e.target.value }))
-                }
-              />
-            </div>
-            <div>
-              <label htmlFor="password">Password :</label>
-              <input
-                type="text"
-                name="password-input"
-                id="password"
-                onChange={(e) =>
-                  setUserInput((prev) => ({
-                    ...prev,
-                    password: e.target.value,
-                  }))
-                }
-              />
-            </div>
+            <p>Please Login First</p>
+            <EmailInput inputHandler={setUserInput}/>
+            <PasswordInput inputHandler={setUserInput}/>
             {error && (
               <p>{!authToken ? "the details you entered are incorrect" : ""}</p>
             )}
@@ -62,6 +44,12 @@ export const Login = () => {
             <button onClick={() => loginDispatch({ type: "SET_TEST_USER" })}>
               Login using Test Credentials
             </button>
+            <div>
+              <p>Haven't signup yet?</p>
+              <NavLink to="/signup">
+                <button>Sign Up</button>
+              </NavLink>
+            </div>
           </>
         )}
       </div>
