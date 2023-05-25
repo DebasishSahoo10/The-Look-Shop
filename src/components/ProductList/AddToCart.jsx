@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import "./ProductList.css";
@@ -9,7 +9,11 @@ import { cartHandler } from "../../utils/clickHandlers";
 export const AddToCart = ({ item }) => {
   const { state, dispatch } = useContext(DataContext);
   const { authToken, isLoggedin } = useContext(AuthContext);
-
+  const [ isDisable, SetIsDisable] = useState(false)
+  const cartClick = () => {
+    cartHandler(item, authToken, dispatch)
+    SetIsDisable(true)
+  }
   return (
     <>
       {isLoggedin ? (
@@ -19,7 +23,7 @@ export const AddToCart = ({ item }) => {
               <button>Go to Cart</button>
             </NavLink>
           ) : (
-            <button onClick={() => cartHandler(item, authToken, dispatch)}>
+            <button onClick={() => cartClick()} disabled={isDisable}>
               Add to Cart
             </button>
           )}
