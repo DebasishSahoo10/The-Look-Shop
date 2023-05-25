@@ -15,7 +15,7 @@ export const Login = () => {
     useContext(AuthContext);
   const loginClickHandler = () => {
     loginDispatch({ type: "SET_USER", payload: userInput });
-    setError(true);
+    setTimeout(()=>setError(true), 2000);
   };
   const handleLogout = () => {
     loginDispatch({ type: "SET_USER", payload: { email: "", password: "" } });
