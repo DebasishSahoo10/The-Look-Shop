@@ -11,6 +11,7 @@ import { ProdShowcase } from "./pages/ProdShowcase/ProdShowcase";
 import { Login } from "./pages/Login/Login";
 import { RequiresAuth } from "./components/RequiresAuth";
 import { ToastContainer } from "react-toastify";
+import { Signup } from "./pages/Signup/Signup";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/mockman" element={<Mockman />} />
+        <Route path="/signup" element = {<Signup/>}/>
       </Routes>
       <ToastContainer/>
     </>
