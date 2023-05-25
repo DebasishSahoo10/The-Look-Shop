@@ -6,7 +6,8 @@ import { NavLink } from "react-router-dom";
 import "./Wishlist.css";
 import { moveToCartHandler, wishlisItemRemoval } from "../../utils/clickHandlers";
 import { AuthContext } from "../../contexts/AuthContext";
-export const Wishlist = () => {
+
+const Wishlist = () => {
   const { state, dispatch } = useContext(DataContext)
   const {authToken} = useContext(AuthContext)
   
@@ -56,3 +57,4 @@ export const Wishlist = () => {
     </div>
   );
 };
+export default Wishlist;
