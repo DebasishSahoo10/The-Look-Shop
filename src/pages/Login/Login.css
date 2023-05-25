@@ -32,3 +32,25 @@
 .login-holder input {
   height: 30px;
 }
+.login-holder p {
+  align-self: center;
+  max-width: 250px;
+  text-align: center;
+}
+.login-holder a {
+  width: 100%;
+}
+.login-holder a button {
+  width: 100%;
+}
+.password-input-container {
+  position: relative;
+}
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: medium;
+  margin: 0;
+}
