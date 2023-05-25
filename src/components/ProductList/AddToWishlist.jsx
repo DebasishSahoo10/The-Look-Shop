@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import "./ProductList.css";
@@ -9,6 +9,11 @@ import { wishlistHandler } from "../../utils/clickHandlers";
 export const AddToWishlist = ({ item }) => {
     const { state, dispatch } = useContext(DataContext);
     const { authToken, isLoggedin } = useContext(AuthContext);
+    const [ isDisable, SetIsDisable] = useState(false)
+    const wishlistClick = () => {
+      wishlistHandler(item, authToken, dispatch)
+      SetIsDisable(true)
+    }
   return (
     <>
       {isLoggedin ? (
@@ -16,7 +21,7 @@ export const AddToWishlist = ({ item }) => {
           {state.wishlist.some((prod) => prod.id === item.id) ? (
             <button>Added to Wishlist</button>
           ) : (
-            <button onClick={() => wishlistHandler(item, authToken, dispatch)}>
+            <button onClick={() => wishlistClick()} disabled={isDisable}>
               Add to Wishlist
             </button>
           )}
