@@ -8,7 +8,7 @@ import { PasswordInput } from "../../components/Inputs/PasswordInput";
 import { EmailInput } from "../../components/Inputs/EmailInput";
 
 
-export const Login = () => {
+const Login = () => {
   const [userInput, setUserInput] = useState({ email: "", password: "" });
   const [error, setError] = useState(false);
   const { loginDispatch, authToken, isLoggedin, setIsLoggedin, setAuthToken } =
@@ -56,3 +56,4 @@ export const Login = () => {
     </>
   );
 };
+export default Login

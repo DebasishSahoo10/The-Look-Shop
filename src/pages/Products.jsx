@@ -8,7 +8,7 @@ import { RatingSlider } from "../components/Filters/RatingSlider";
 import { ProductList } from "../components/ProductList/ProductList";
 import { SearchBar } from "../components/Filters/SearchBar";
 
-export const Products = () => {
+const Products = () => {
   return (
     <div style={{ display: "grid" }}>
       <Logo />
@@ -31,3 +31,4 @@ export const Products = () => {
     </div>
   );
 };
+export default Products;

@@ -6,8 +6,7 @@ import { Categories } from "../components/Categories/Categories";
 import { StoryBoard } from "../components/StoryBoard/StoryBoard";
 import { Socials } from "../components/Socials/Socials";
 
-
-export const Landing = () => {
+const Landing = () => {
   return (
     <div className="landingContainer">
       <Logo/>
@@ -19,3 +18,5 @@ export const Landing = () => {
     </div>
   );
 };
+ 
+export default Landing;

@@ -14,7 +14,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { AddToWishlist } from "../../components/ProductList/AddToWishlist";
 import { PriceCheckout } from "./PriceCheckout";
 
-export const Cart = () => {
+const Cart = () => {
   const { state, dispatch } = useContext(DataContext);
   const { authToken } = useContext(AuthContext);
   return (
@@ -62,3 +62,4 @@ export const Cart = () => {
     </div>
   );
 };
+export default Cart;

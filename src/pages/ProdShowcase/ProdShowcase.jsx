@@ -8,7 +8,7 @@ import '../Cart/Cart.css'
 import { AddToCart } from "../../components/ProductList/AddToCart";
 import { AddToWishlist } from "../../components/ProductList/AddToWishlist";
 
-export const ProdShowcase = () => {
+const ProdShowcase = () => {
   const { state } = useContext(DataContext);
   const { prodID } = useParams();
   const [prod, setProd] = useState({});
@@ -37,3 +37,4 @@ export const ProdShowcase = () => {
     </>
   );
 };
+export default ProdShowcase;

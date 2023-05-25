@@ -4,7 +4,7 @@ import { Nav } from "../../components/Nav/Nav";
 import { PasswordInput } from "../../components/Inputs/PasswordInput";
 import { EmailInput } from "../../components/Inputs/EmailInput";
 
-export const Signup = () => {
+const Signup = () => {
   const [userInput, setUserInput] = useState({ email: "", password: "" });
   const [error, setError] = useState(false);
   const [serverError, setServerError] = useState("");
@@ -51,3 +51,4 @@ export const Signup = () => {
     </>
   );
 };
+export default Signup;
