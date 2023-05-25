@@ -89,6 +89,12 @@ button {
   margin-top: 50px;
   text-align: center;
 }
+.error-message {
+  color: red;
+}
+.success-message {
+  color: green;
+}
 
 @media screen and (max-width : 860px) {
   .product-list {
