@@ -20,8 +20,9 @@ export const Signup = () => {
             method: "POST",
             body: JSON.stringify(userInput),
           });
-          if ((await signupCall.status) === 422) {
+          if ((signupCall.status) === 422) {
             setError(true);
+            setIsSignup(false)
             setServerError("This Email ID already exists, try a different one");
           } else {
             setIsSignup(true);
@@ -41,11 +42,11 @@ export const Signup = () => {
         <EmailInput inputHandler={setUserInput} />
         <PasswordInput inputHandler={setUserInput} />
         <button onClick={() => handleSignup()}>Sign Up</button>
-        {isSignup && <p>You have sucessfully signed up. now you can Login</p>}
+        {isSignup && <p className="success-message">You have sucessfully signed up. now you can Login</p>}
         {error && serverError.length === 0 && (
-          <p>sadly empty inputs don't work here</p>
+          <p className="error-message">sadly empty inputs don't work here</p>
         )}
-        {error && <p>{serverError}</p>}
+        {error && <p className="error-message">{serverError}</p>}
       </div>
     </>
   );
