@@ -9,7 +9,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Colorful WMN 01",
-    img: "https://live.staticflickr.com/65535/52900844018_4f5fccef4a_h.jpg",
+    img: "https://i.postimg.cc/JnDRJ2Q7/Colorful-WMN-1.webp",
     price: 100,
     details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     category: "colorful",
@@ -19,7 +19,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Colorful WMN 02",
-    img: "https://live.staticflickr.com/65535/52900399316_13fba57253_h.jpg",
+    img: "https://i.postimg.cc/3rGKxzRn/Colorful-WMN-2.webp",
     price: 110,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -30,7 +30,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Colorful WMN 03",
-    img: "https://live.staticflickr.com/65535/52900558849_421edca50a_h.jpg",
+    img: "https://i.postimg.cc/MH1x3f4h/Colorful-WMN-3.webp",
     price: 120,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -41,7 +41,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Funky WMN 01",
-    img: "https://live.staticflickr.com/65535/52900399261_c9338cf89f_h.jpg",
+    img: "https://i.postimg.cc/Z5wmQS7K/Funky-WMN-1.webp",
     price: 130,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -52,7 +52,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Funky WMN 02",
-    img: "https://live.staticflickr.com/65535/52900789825_6478c2f4f7_h.jpg",
+    img: "https://i.postimg.cc/KvrxnLtT/Funky-WMN-2.webp",
     price: 140,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -63,7 +63,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Funky WMN 03",
-    img: "https://live.staticflickr.com/65535/52899825407_0e5137a8d5_h.jpg",
+    img: "https://i.postimg.cc/kgJ9w4yp/Funky-WMN-3.webp",
     price: 150,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -74,7 +74,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Fashiony WMN 01",
-    img: "https://live.staticflickr.com/65535/52900558829_461e4b18a3_h.jpg",
+    img: "https://i.postimg.cc/zX1qbpH5/Fashiony-WMN-1.webp",
     price: 165,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -85,7 +85,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Fashiony WMN 02",
-    img: "https://live.staticflickr.com/65535/52900558799_34e339f9d3_h.jpg",
+    img: "https://i.postimg.cc/VNT8YFPx/Fashiony-WMN-2.webp",
     price: 192,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -96,7 +96,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Fashiony WMN 03",
-    img: "https://live.staticflickr.com/65535/52899825457_7f3d1085b8_h.jpg",
+    img: "https://i.postimg.cc/6QTKJmgV/Fashiony-WMN-3.webp",
     price: 173,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -107,7 +107,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Modern WMN 01",
-    img: "https://live.staticflickr.com/65535/52900843898_d56eb36a18_h.jpg",
+    img: "https://i.postimg.cc/GtnnDh2z/Modern-WMN-1.webp",
     price: 212,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -118,7 +118,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Modern WMN 02",
-    img: "https://live.staticflickr.com/65535/52900843883_6df9f27b1c_h.jpg",
+    img: "https://i.postimg.cc/sf5rrS6L/Modern-WMN-2.webp",
     price: 195,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -129,7 +129,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Modern MN 01",
-    img: "https://live.staticflickr.com/65535/52900399221_c2554d0910_h.jpg",
+    img: "https://i.postimg.cc/DZXKmb28/Modern-MN-1.webp",
     price: 210,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -140,7 +140,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Retro WMN 01",
-    img: "https://live.staticflickr.com/65535/52900399186_100a054554_h.jpg",
+    img: "https://i.postimg.cc/g22F87z9/Retro-WMN-1.webp",
     price: 224,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -151,7 +151,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Retro WMN 02",
-    img: "https://live.staticflickr.com/65535/52900789755_1fd5fda240_h.jpg",
+    img: "https://i.postimg.cc/L8QdTV5J/Retro-WMN-2.webp",
     price: 238,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -162,7 +162,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Retro WMN 03",
-    img: "https://live.staticflickr.com/65535/52899825292_41f241b481_h.jpg",
+    img: "https://i.postimg.cc/RV9zVF2Z/Retro-WMN-3.webp",
     price: 243,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -173,7 +173,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Retro WMN 04",
-    img: "https://live.staticflickr.com/65535/52900399106_91c476dae5_h.jpg",
+    img: "https://i.postimg.cc/Bvjrw1PM/Retro-WMN-4.webp",
     price: 257,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -184,7 +184,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Retro WMN 05",
-    img: "https://live.staticflickr.com/65535/52900843743_a8d7fa86dd_h.jpg",
+    img: "https://i.postimg.cc/nckfsxtY/Retro-WMN-5.webp",
     price: 261,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -195,7 +195,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Retro WMN 06",
-    img: "https://live.staticflickr.com/65535/52900399031_b44cd719da_h.jpg",
+    img: "https://i.postimg.cc/fb1G4TxZ/Retro-WMN-6.webp",
     price: 264,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -206,7 +206,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Sleek MN 01",
-    img: "https://live.staticflickr.com/65535/52900558534_13c5f11d40_h.jpg",
+    img: "https://i.postimg.cc/Y9gJtK3F/Sleek-MN-1.webp",
     price: 211,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -217,7 +217,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Sleek WMN 01",
-    img: "https://live.staticflickr.com/65535/52900789550_1ccf1e4b80_h.jpg",
+    img: "https://i.postimg.cc/rsk7mnnP/Sleek-WMN-1.webp",
     price: 234,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -228,7 +228,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Sleek WMN 02",
-    img: "https://live.staticflickr.com/65535/52900789505_e1d1ccc79d_h.jpg",
+    img: "https://i.postimg.cc/NFkSr6Zf/Sleek-WMN-2.webp",
     price: 283,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -239,7 +239,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Stylish WMN 01",
-    img: "https://live.staticflickr.com/65535/52900558959_f5c9f7b073_h.jpg",
+    img: "https://i.postimg.cc/SNmwbPzX/Stylish-WMN-1.webp",
     price: 290,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -250,7 +250,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Stylish WMN 02",
-    img: "https://live.staticflickr.com/65535/52899825112_aca8e59935_h.jpg",
+    img: "https://i.postimg.cc/wjGPJT4J/Stylish-WMN-2.webp",
     price: 194,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -261,7 +261,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Stylish MN 01",
-    img: "https://live.staticflickr.com/65535/52899825157_16f11db435_h.jpg",
+    img: "https://i.postimg.cc/9XdvS2z5/Stylish-MN-1.webp",
     price: 278,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -272,7 +272,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Trendy WMN 01",
-    img: "https://live.staticflickr.com/65535/52899825532_a6a59737fa_h.jpg",
+    img: "https://i.postimg.cc/QdtwHWmh/Trendy-WMN-1.webp",
     price: 284,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -283,7 +283,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Trendy WMN 02",
-    img: "https://live.staticflickr.com/65535/52900844088_c9df9610e9_h.jpg",
+    img: "https://i.postimg.cc/q76FGVWF/Trendy-WMN-2.webp",
     price: 199,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -294,7 +294,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Trendy MN 01",
-    img: "https://live.staticflickr.com/65535/52900398966_ea7e52ba2e_h.jpg",
+    img: "https://i.postimg.cc/SNVHSGWg/Trendy-MN-1.webp",
     price: 202,
     details:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",

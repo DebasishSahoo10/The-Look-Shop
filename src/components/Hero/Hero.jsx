@@ -10,7 +10,7 @@ export const Hero = () => {
       </div>
       <div>
         <img
-          src="https://images2.imgbox.com/fe/45/YZcxtWPA_o.png"
+          src="https://i.postimg.cc/x8GD3DNQ/Hero-Image.webp"
           alt="three models wearing three different looks"
         />
       </div>
