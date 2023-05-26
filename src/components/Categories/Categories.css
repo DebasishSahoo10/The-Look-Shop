@@ -33,8 +33,7 @@
 .category_card img {
   border-radius: 6px 6px 0px 0px;
   object-fit: cover;
-  height: 200px;
-  width: 150px;
+  aspect-ratio: 3 / 4;
 }
 .category_card p {
   margin: 0px;
