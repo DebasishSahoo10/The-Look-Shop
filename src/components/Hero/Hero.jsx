@@ -12,8 +12,6 @@ export const Hero = () => {
       </div>
       <div>
       <img
-          rel="preload"
-          fetchpriority="high"
           src="https://i.postimg.cc/x8GD3DNQ/Hero-Image.webp"
           alt="three models wearing three different looks"
         />
