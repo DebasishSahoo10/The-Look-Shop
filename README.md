@@ -30,7 +30,7 @@ and there you go ✳️
 The Design Style used here is called NEO BRUTALISM. And the inspiration came from multiple websites but mainly from Gumroad. Since the day I started my UI journey, I have always wanted to re-create this design style and what a better time than my first major project. For the character illustrations : when I made the first sketch of UI, I knew that I will need illustrations that will be matching with the design and since I have that freedom here, I searched a lot and then landed on a deisgn set from FreePik made by the artist named PIKI SUPERSTAR. All the credit link are below : 
 - [PIKI SUPERSTAR](https://www.freepik.com/author/pikisuperstar)
 - [Gumroad](https://gumroad.com/)
-- [First Draft On Figma](hhttps://www.figma.com/community/file/1244213181283177424/The-Look-Shop---NEUBRUTALISM)
+- [First Draft On Figma](https://www.figma.com/community/file/1244213181283177424/The-Look-Shop---NEUBRUTALISM)
 
 ## 🎈 Future Versions
 I have not decided if I will be adding any new things to the app or not, as I already completed all the requirements for the assignement, but Hey who doesn't want his app to be perfect, so I will try my best, below are some of the possible future additions. And I welcome everyone to send the Pull Requests on anything, you feel, should be improved:
