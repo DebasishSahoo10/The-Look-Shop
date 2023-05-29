@@ -25,6 +25,7 @@ and there you go ✳️
 - **React Context** (to make a single state accessible to every route/component in the app, things like AUTH, Product Database and Filters put in as Contexts)
 - **MockBee Backend** (this gives us place to put database and APIs to get it or manage it)
 - **Responsive** (the whole app is responsive to every type of screen widths from desktop screens to foldable)
+- **React Toastify** (Visual UI Pieces like action buttons gives you a toast (visual confirmation) when you click on them)
 
 ## ✍️ Design and Credits
 The Design Style used here is called NEO BRUTALISM. And the inspiration came from multiple websites but mainly from Gumroad. Since the day I started my UI journey, I have always wanted to re-create this design style and what a better time than my first major project. For the character illustrations : when I made the first sketch of UI, I knew that I will need illustrations that will be matching with the design and since I have that freedom here, I searched a lot and then landed on a deisgn set from FreePik made by the artist named PIKI SUPERSTAR. All the credit link are below : 
