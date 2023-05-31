@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../contexts/DataContext";
 import "./Cart.css";
+import { Address } from "../../components/Address";
 
 export const PriceCheckout = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,6 +40,9 @@ export const PriceCheckout = () => {
         {state.cart.reduce((acc, item) => (acc += item.price * item.qty), 0) -
           discount}
       </p>
+      <div className="address-container">
+          <Address/>
+      </div>
       <button onClick={()=>handleClick()}>Checkout</button>
     </div>
   );

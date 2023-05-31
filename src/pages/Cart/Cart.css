@@ -78,6 +78,29 @@ li p:nth-child(1) {
   display: flex;
   gap: 5px;
 }
+select {
+  width: 100%;
+  font-family: "Space Grotesk", sans-serif;
+  background-color: #d0f032;
+  border-radius: 5px;
+  height: 30px;
+}
+option {
+  font-family: "Space Grotesk", sans-serif;
+}
+input {
+  width: 98%;
+}
+.address-container {
+  border-radius: 6px;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: #d0f032;
+  height: 170px;
+}
+.address-container button {
+  background-color: white;
+}
 @media screen and (max-width: 856px) {
   .price-container {
     width: 570px;
