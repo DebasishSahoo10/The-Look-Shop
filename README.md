@@ -36,7 +36,7 @@ The Design Style used here is called NEO BRUTALISM. And the inspiration came fro
 ## 🎈 Future Versions
 I have not decided if I will be adding any new things to the app or not, as I already completed all the requirements for the assignement, but Hey who doesn't want his app to be perfect, so I will try my best, below are some of the possible future additions. And I welcome everyone to send the Pull Requests on anything, you feel, should be improved:
 - Adding Firebase : as both the data and auth is not persistent here. so once you refresh the page, it is gone. so we need an actual cloud here.
-- Address Management : since the mock backend doesn't support address management, I haven't found a more right way to do it.
+- Address Management : <strike>since the mock backend doesn't support address management, I haven't found a more right way to do it.</strike>. I have added it recently but implementation is not accurate as backend doesn't have this feature.
 - Razorpay Integration : more than half of the industry uses it, so able to deal with its APIs is definately a skill.
 - Performance Imporvements : as of now the CLS and LCP scores of the app is not that good. so will fix it soon. I have also added React.Lazy and Suspense to fetch the Route Components only when it is rendered, but somehow they are not improving the performance as much I wanted. so yeah that is another room for improvement.
 ## 🤜🤛 Connect with me
