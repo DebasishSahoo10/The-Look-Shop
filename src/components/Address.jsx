@@ -26,7 +26,7 @@ export const Address = () => {
             <div>
               <label htmlFor="address-selector">Select Address :</label>
               <select
-                onClick={(e) => setSelectedAddress(e.target.value)}
+                onChange={(e) => setSelectedAddress(e.target.value)}
                 id="address-selector"
               >
                 {address.map((addr) => {
