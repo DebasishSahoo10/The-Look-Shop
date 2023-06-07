@@ -31,7 +31,12 @@ export const CategorySection = ({ gender }) => {
           .slice(0, 4)
           .map((item) => (
             <li key={item.id} className="category_card">
-              <img src={item.img} alt={`${item.name}`} width="150" height="200"/>
+              <img
+                src={item.img}
+                alt={`${item.name}`}
+                width="150"
+                height="200"
+              />
               <p>
                 <NavLink to={`/products/${item.id}`}>{item.name}</NavLink>
               </p>
