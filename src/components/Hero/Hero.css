@@ -53,8 +53,8 @@
 @media screen and (max-width: 600px) {
   .hero img {
     width: 220px;
-    height: 280px;
-    margin-bottom: -80px;
+    height: 261px;
+    margin-bottom: -92px;
   }
   .hero div:nth-child(1) {
     font-size: 22px;
