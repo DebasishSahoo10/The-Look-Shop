@@ -25,7 +25,7 @@ export const CategorySection = ({ gender }) => {
           SHOW ALL
         </p>
       </div>
-      <div className="category_card-container">
+      <ul className="category_card-container">
         {state.products
           .filter((item) => item.gender === gender)
           .slice(0, 4)
@@ -37,7 +37,7 @@ export const CategorySection = ({ gender }) => {
               </p>
             </li>
           ))}
-      </div>
+      </ul>
     </div>
   );
 };
