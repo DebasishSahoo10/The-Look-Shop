@@ -42,7 +42,7 @@
 .hero img {
   height: 333px;
   width: 280px;
-  margin-bottom: -50px;
+  margin-bottom: -42px;
 }
 
 @media screen and (max-width: 860px) {
