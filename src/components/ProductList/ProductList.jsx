@@ -32,7 +32,7 @@ export const ProductList = () => {
       {prodDB.map((item) => {
         return (
           <li key={item.id}>
-            <img src={item.img} alt={`look for ${item.name}`} width={"150px"} />
+            <img src={item.img} alt={`look for ${item.name}`} width={"150px"} style={{objectFit : "cover"}}/>
             <div className="product-list_card-details">
               <NavLink to={`/products/${item.id}`}>
                 <p>{item.name}</p>
