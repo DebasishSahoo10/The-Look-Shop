@@ -23,6 +23,8 @@ and there you go ✳️
 - **SPA** (with the help of React Router this app can do everything without a reload after the first render)
 - **Authorisation and Private Routes** (some routes in the app are private and can't be accessed without a login. and as of authorisation goes, we can signup and then login or can just use Test Credential button)
 - **React Context** (to make a single state accessible to every route/component in the app, things like AUTH, Product Database and Filters put in as Contexts)
+- **Razorpay Integration** (When you click on Checkout button Razorpay will pop up. Currently it works in Test Mode of Razorpay API.)
+- **Debouncing in Search** (Search will only work if time between two key presses is 500ms. It is used to limit API calls to reduce stress on backend)
 - **MockBee Backend** (this gives us place to put database and APIs to get it or manage it)
 - **Responsive** (the whole app is responsive to every type of screen widths from desktop screens to foldable)
 - **React Toastify** (Visual UI Pieces like action buttons gives you a toast (visual confirmation) when you click on them)
@@ -37,7 +39,7 @@ The Design Style used here is called NEO BRUTALISM. And the inspiration came fro
 I have not decided if I will be adding any new things to the app or not, as I already completed all the requirements for the assignement, but Hey who doesn't want his app to be perfect, so I will try my best, below are some of the possible future additions. And I welcome everyone to send the Pull Requests on anything, you feel, should be improved:
 - Adding Firebase : as both the data and auth is not persistent here. so once you refresh the page, it is gone. so we need an actual cloud here.
 - Address Management : <strike>since the mock backend doesn't support address management, I haven't found a more right way to do it.</strike>. I have added it recently but implementation is not accurate as backend doesn't have this feature.
-- Razorpay Integration : more than half of the industry uses it, so able to deal with its APIs is definately a skill.
+- Razorpay Integration : <strike>more than half of the industry uses it, so able to deal with its APIs is definately a skill.</strike>
 - Performance Imporvements : as of now the CLS and LCP scores of the app is not that good. so will fix it soon. I have also added React.Lazy and Suspense to fetch the Route Components only when it is rendered, but somehow they are not improving the performance as much I wanted. so yeah that is another room for improvement.
 ## 🤜🤛 Connect with me
 Thank you for checking this project out. If you have any queries regarding the project or have some suggestions, feel free to connect with me on my social links given below :
