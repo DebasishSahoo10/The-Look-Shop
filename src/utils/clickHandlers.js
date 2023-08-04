@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -168,4 +169,54 @@ export const moveToCartHandler = (item, authToken, dispatch) => {
     progress: undefined,
     theme: "dark"
   });
+}
+
+const loadScript = (src) => {
+  return new Promise((resolve) => {
+    const script = document.createElement("script")
+    script.src = src
+    script.onload = () => {
+      resolve(true)
+    }
+    script.onerror = () => {
+      resolve(false)
+    }
+    document.body.appendChild(script)
+  })
+}
+
+export const handleCheckout = async (cartAmt, cart) => {
+  const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js")
+    if (!res) {
+      toast.error("Razorpay failed to load, check you internet connection");
+      return;
+    }
+    const options = {
+      key: "rzp_test_YlWEnLVnFzUw1y",
+      amount: cartAmt * 80 * 100,
+      currency: "INR",
+      name: "THE LOOK SHOP",
+      description: "Thank you for shopping with us",
+      image: 'https://i.postimg.cc/rwQyqXd4/No3.webp',
+      handler: function (response) {
+        const orderData = {
+          orderProducts: [...cart],
+          amount: cartAmt,
+          paymentId: response.razorpay_payment_id,
+          userEmail: `testemail@email.com`,
+        };
+        toast.success(`Payment of Rs. ${cartAmt} is Succesful !`);
+      },
+      prefill: {
+        name: `User Name`,
+        email: `testemail@email.com`,
+        contact: "9658508656",
+      },
+      theme: {
+        color: "#d0f032",
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
 }
