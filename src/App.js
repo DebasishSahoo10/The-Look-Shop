@@ -18,21 +18,21 @@ const Cart = lazy(() => import("./pages/Cart/Cart"));
 const Products = lazy(() => import("./pages/Products"));
 
 function App() {
-  const dispatch = useDispatch()
-  useEffect(()=>{
-    (async()=>{
-        try {
-            const serverCall = await fetch("/api/products")
-            const products = await serverCall.json()
-            dispatch(SET_PRODUCTS(products.products))
-        } catch(err) {
-            console.log(err)
-        }
-    })()
-},[])
+  const dispatch = useDispatch();
+  useEffect(() => {
+    (async () => {
+      try {
+        const serverCall = await fetch("/api/products");
+        const products = await serverCall.json();
+        dispatch(SET_PRODUCTS(products.products));
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, []);
   return (
     <>
-      <Suspense fallback={<LoadingFallback/>}>
+      <Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route
