@@ -1,6 +1,3 @@
-import { useContext } from "react";
-
-import { DataContext } from "../../contexts/DataContext";
 import "./Filters.css"
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_CATEGORY, REMOVE_CATEGORY } from "../../Redux/FilterSlice";
@@ -8,8 +5,8 @@ import { ADD_CATEGORY, REMOVE_CATEGORY } from "../../Redux/FilterSlice";
 export const CategoryFilter = () => {
   const filters = useSelector(state => state.filters)
   const dispatch = useDispatch()
-  const { state } = useContext(DataContext);
-  const categoriesList = state.products.reduce((acc, item) => {
+  const data = useSelector(state => state.data)
+  const categoriesList = data.products.reduce((acc, item) => {
     if (!acc.includes(item.category)) {
       acc.push(item.category);
     }

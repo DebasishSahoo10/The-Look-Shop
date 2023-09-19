@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { SET_CART, SET_WISHLIST } from "../Redux/DataSlice";
 
 export const cartHandler = (item, authToken, dispatch, isToast=true) => {
   (async () => {
@@ -13,7 +14,7 @@ export const cartHandler = (item, authToken, dispatch, isToast=true) => {
         body: JSON.stringify({ product: item }),
       });
       const newCart = await cartCall.json();
-      dispatch({ type: "SET_CART", payload: newCart.cart });
+      dispatch(SET_CART(newCart.cart));
     } catch (err) {
       console.log(err);
     }
@@ -42,7 +43,7 @@ export const cartItemRemoval = (item, authToken, dispatch, isToast=true) => {
         },
       });
       const newCart = await cartCall.json();
-      dispatch({ type: "SET_CART", payload: newCart.cart });
+      dispatch(SET_CART(newCart.cart));
     } catch (err) {
       console.log(err);
     }
@@ -72,7 +73,7 @@ export const wishlistHandler = (item, authToken, dispatch, isToast=true) => {
         body: JSON.stringify({ product: item }),
       });
       const newWishlist = await wishlistCall.json();
-      dispatch({ type: "SET_WISHLIST", payload: newWishlist.wishlist });
+      dispatch(SET_WISHLIST(newWishlist.wishlist));
     } catch (err) {
       console.log(err);
     }
@@ -101,7 +102,7 @@ export const wishlisItemRemoval = (item, authToken, dispatch, isToast=true) => {
         },
       });
       const newWishlist = await wishlistCall.json();
-      dispatch({ type: "SET_WISHLIST", payload: newWishlist.wishlist });
+      dispatch(SET_WISHLIST(newWishlist.wishlist));
     } catch (err) {
       console.log(err);
     }
@@ -131,7 +132,7 @@ export const cartItemIncrement = (item, authToken, dispatch) => {
         body: JSON.stringify({ action: { type: "increment" } }),
       });
       const newQTY = await incrementCall.json();
-      dispatch({ type: "SET_CART", payload: newQTY.cart });
+      dispatch(SET_CART(newQTY.cart));
     } catch (err) {
       console.log(err);
     }
@@ -149,7 +150,7 @@ export const cartItemDecrement = (item, authToken, dispatch) => {
         body: JSON.stringify({ action: { type: "decrement" } }),
       });
       const newQTY = await decrementCall.json();
-      dispatch({ type: "SET_CART", payload: newQTY.cart });
+      dispatch(SET_CART(newQTY.cart));
     } catch (err) {
       console.log(err);
     }

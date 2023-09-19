@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { Logo } from "../../components/Logo/Logo";
 import { Nav } from "../../components/Nav/Nav";

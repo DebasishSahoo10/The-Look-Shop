@@ -1,18 +1,16 @@
-import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
 import "./ProductList.css";
-import { FilterContext } from "../../contexts/FilterContext";
-import { DataContext } from "../../contexts/DataContext";
 import { AddToCart } from "./AddToCart";
 import { AddToWishlist } from "./AddToWishlist";
+import { useSelector } from "react-redux";
 
 
 export const ProductList = () => {
-  const { state } = useContext(DataContext);
-  const { filters } = useContext(FilterContext);
+  const data = useSelector(state => state.data)
+  const filters = useSelector(state => state.filters)
 
-  let prodDB = state.products
+  let prodDB = data.products
     .filter(
       (item) =>
         (!filters.gender || item.gender === filters.gender) &&

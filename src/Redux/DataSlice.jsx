@@ -7,7 +7,6 @@ export const DataSlice = createSlice({
     initialState,
     reducers : {
         SET_PRODUCTS : (state, action) => {
-            console.log(action.payload)
             state.products = action.payload
         },
         SET_CART : (state, action) => {
