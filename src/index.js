@@ -9,6 +9,9 @@ import { DataProvider } from "./contexts/DataContext.jsx";
 import { FilterProvider } from "./contexts/FilterContext.jsx";
 import { AuthProvider } from "./contexts/AuthContext";
 
+import { Provider } from "react-redux";
+import { Store } from "./Redux/store";
+
 // Call make Server
 makeServer();
 
@@ -18,7 +21,9 @@ ReactDOM.render(
       <AuthProvider>
         <DataProvider>
           <FilterProvider>
-            <App />
+            <Provider store={Store}>
+              <App />
+            </Provider>
           </FilterProvider>
         </DataProvider>
       </AuthProvider>

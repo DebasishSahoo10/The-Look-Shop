@@ -1,12 +1,15 @@
-import { useContext } from "react";
-import { FilterContext } from "../../contexts/FilterContext";
 import "./Filters.css"
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_RATING } from "../../Redux/FilterSlice";
+
 
 export const RatingSlider = () => {
-  const { filters, dispatchFilters } = useContext(FilterContext);
+  const filters = useSelector(state => state.filters)
+  const dispatch = useDispatch()
   const handleRatingSlide = (sliderValue) => {
-    dispatchFilters({type : "ADD_RATING", payload : sliderValue})
+    dispatch(ADD_RATING(sliderValue))
   }
+
   return (
     <>
       <div className="filter_rating-slider">

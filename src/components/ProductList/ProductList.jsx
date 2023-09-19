@@ -6,6 +6,8 @@ import { FilterContext } from "../../contexts/FilterContext";
 import { DataContext } from "../../contexts/DataContext";
 import { AddToCart } from "./AddToCart";
 import { AddToWishlist } from "./AddToWishlist";
+import { useSelector } from "react-redux";
+
 
 export const ProductList = () => {
   const { state } = useContext(DataContext);
@@ -26,7 +28,8 @@ export const ProductList = () => {
         ? b.price - a.price
         : 0
     )
-
+    const filtersRed = useSelector(state => state.filters)
+    console.log(filtersRed)
   return (
     <>
       {prodDB.map((item) => {
