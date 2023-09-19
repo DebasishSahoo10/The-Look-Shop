@@ -1,33 +1,65 @@
-import { useContext, useState } from "react";
+import { useEffect, useState } from "react";
 import { Logo } from "../../components/Logo/Logo";
 import { Nav } from "../../components/Nav/Nav";
-import { AuthContext } from "../../contexts/AuthContext";
 import "./Login.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { PasswordInput } from "../../components/Inputs/PasswordInput";
 import { EmailInput } from "../../components/Inputs/EmailInput";
+import { useDispatch, useSelector } from "react-redux";
+import { SET_LOGIN, SET_TOKEN, SET_USER } from "../../Redux/AuthSlice";
 
 
 const Login = () => {
+  const auth = useSelector(state => state.auth)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const location = useLocation()
   const [userInput, setUserInput] = useState({ email: "", password: "" });
   const [error, setError] = useState(false);
-  const { loginDispatch, authToken, isLoggedin, setIsLoggedin, setAuthToken } =
-    useContext(AuthContext);
+  const [loginReady, setLoginReady] = useState(false)
+  useEffect(()=>console.log(auth), [auth])
   const loginClickHandler = () => {
-    loginDispatch({ type: "SET_USER", payload: userInput });
+    setLoginReady(true)
     setTimeout(()=>setError(true), 2000);
   };
   const handleLogout = () => {
-    loginDispatch({ type: "SET_USER", payload: { email: "", password: "" } });
-    setIsLoggedin(false);
-    setAuthToken();
+    dispatch(SET_LOGIN(false))
+    dispatch(SET_TOKEN(null))
   };
+  const testLogin = () => {
+    setUserInput({ email: "debasishsahoo_@outlook.com", password: "thecreator" })
+    setLoginReady(true)
+  }
+  useEffect(()=> {
+    if (auth.isLoggedin) {
+      navigate(location?.state?.from?.pathname)
+    }
+  },[auth.isLoggedin])
+  useEffect(() => {
+    if (loginReady) {
+      (async () => {
+        try {
+          const authCall = await fetch("/api/auth/login", {
+            method: "POST",
+            body: JSON.stringify(userInput),
+          });
+          const token = await authCall.json()
+          token.encodedToken && dispatch(SET_TOKEN(token.encodedToken))
+          token.encodedToken && dispatch(SET_LOGIN(true))
+          token.encodedToken && dispatch(SET_USER(userInput))
+          setLoginReady(false)
+        } catch (error) {
+          console.log(error);
+        }
+      })()
+    };
+  }, [loginReady]);
   return (
     <>
       <Logo />
       <Nav />
       <div className="login-holder">
-        {isLoggedin ? (
+        {auth.isLoggedin ? (
           <>
             <h2>You are already Logged In</h2>
             <button onClick={() => handleLogout()}>Log Out</button>
@@ -38,10 +70,10 @@ const Login = () => {
             <EmailInput inputHandler={setUserInput}/>
             <PasswordInput inputHandler={setUserInput}/>
             {error && (
-              <p>{!authToken ? "the details you entered are incorrect" : ""}</p>
+              <p>{!auth.authToken ? "the details you entered are incorrect" : ""}</p>
             )}
             <button onClick={() => loginClickHandler()}>Login</button>
-            <button onClick={() => loginDispatch({ type: "SET_TEST_USER" })}>
+            <button onClick={() => testLogin()}>
               Login using Test Credentials
             </button>
             <div>

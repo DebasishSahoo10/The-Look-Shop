@@ -6,10 +6,12 @@ import { NavLink } from "react-router-dom";
 import "./Wishlist.css";
 import { moveToCartHandler, wishlisItemRemoval } from "../../utils/clickHandlers";
 import { AuthContext } from "../../contexts/AuthContext";
+import { useSelector } from "react-redux";
 
 const Wishlist = () => {
   const { state, dispatch } = useContext(DataContext)
-  const {authToken} = useContext(AuthContext)
+  const auth = useSelector(state => state.auth)
+  const authToken = auth.authToken
   
   return (
     <div>
