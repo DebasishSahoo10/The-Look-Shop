@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ToastContainer } from "react-toastify";
 import { Suspense, lazy, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
