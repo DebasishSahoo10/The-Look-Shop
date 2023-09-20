@@ -1,13 +1,12 @@
-import { useContext } from "react";
-
-import { DataContext } from "../../contexts/DataContext";
-import { FilterContext } from "../../contexts/FilterContext";
 import "./Filters.css"
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_CATEGORY, REMOVE_CATEGORY } from "../../Redux/FilterSlice";
 
 export const CategoryFilter = () => {
-  const { state } = useContext(DataContext);
-  const {filters, dispatchFilters} = useContext(FilterContext)
-  const categoriesList = state.products.reduce((acc, item) => {
+  const filters = useSelector(state => state.filters)
+  const dispatch = useDispatch()
+  const data = useSelector(state => state.data)
+  const categoriesList = data.products.reduce((acc, item) => {
     if (!acc.includes(item.category)) {
       acc.push(item.category);
     }
@@ -15,9 +14,10 @@ export const CategoryFilter = () => {
   }, []);
   const handleCategoryClick = (category ) => {
     if (filters.category.includes(category)) {
-        dispatchFilters({type: "REMOVE_CATEGORY", payload : category})
+        dispatch(REMOVE_CATEGORY(category))
     } else {
-        dispatchFilters({type : "ADD_CATEGORY", payload : category})
+        dispatch(ADD_CATEGORY(category))
+
     }
   }
   return (

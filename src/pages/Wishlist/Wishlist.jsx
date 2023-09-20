@@ -1,25 +1,25 @@
-import { useContext } from "react";
 import { Logo } from "../../components/Logo/Logo";
 import { Nav } from "../../components/Nav/Nav";
-import { DataContext } from "../../contexts/DataContext";
 import { NavLink } from "react-router-dom";
 import "./Wishlist.css";
 import { moveToCartHandler, wishlisItemRemoval } from "../../utils/clickHandlers";
-import { AuthContext } from "../../contexts/AuthContext";
+import { useDispatch, useSelector } from "react-redux";
 
 const Wishlist = () => {
-  const { state, dispatch } = useContext(DataContext)
-  const {authToken} = useContext(AuthContext)
+  const data = useSelector(state => state.data)
+  const dispatch = useDispatch()
+  const auth = useSelector(state => state.auth)
+  const authToken = auth.authToken
   
   return (
     <div>
       <Logo />
       <Nav />
-      {state.wishlist.length===0 && <h2 className="wishlist-h2">Your Wishlist Is Empty</h2>}
+      {data.wishlist.length===0 && <h2 className="wishlist-h2">Your Wishlist Is Empty</h2>}
       <div className="wishlist">
-        {state.wishlist.length > 0 && (
+        {data.wishlist.length > 0 && (
           <>
-            {state.wishlist.map((item) => {
+            {data.wishlist.map((item) => {
               return (
                 <li key={item.id}>
                   <img src={item.img} alt="" width={"150px"} />
@@ -30,7 +30,7 @@ const Wishlist = () => {
                     <p>{item.price} $</p>
                     <p>{item.rating} ⭐</p>
                     <div className="wishlist-btn-container">
-                      {state.cart.some((prod) => prod.id === item.id) ? (
+                      {data.cart.some((prod) => prod.id === item.id) ? (
                         <NavLink to="/cart">
                           <button>Go to Cart</button>
                         </NavLink>

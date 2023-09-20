@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ToastContainer } from "react-toastify";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { Route, Routes } from "react-router";
 
@@ -7,6 +8,8 @@ import "./App.css";
 import Landing from "./pages/Landing";
 import { RequiresAuth } from "./components/RequiresAuth";
 import { LoadingFallback } from "./components/LoadingFallback";
+import { useDispatch } from "react-redux";
+import { SET_PRODUCTS } from "./Redux/DataSlice";
 const Signup = lazy(() => import("./pages/Signup/Signup"));
 const Login = lazy(() => import("./pages/Login/Login"));
 const ProdShowcase = lazy(() => import("./pages/ProdShowcase/ProdShowcase"));
@@ -15,9 +18,21 @@ const Cart = lazy(() => import("./pages/Cart/Cart"));
 const Products = lazy(() => import("./pages/Products"));
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    (async () => {
+      try {
+        const serverCall = await fetch("/api/products");
+        const products = await serverCall.json();
+        dispatch(SET_PRODUCTS(products.products));
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, []);
   return (
     <>
-      <Suspense fallback={<LoadingFallback/>}>
+      <Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route

@@ -1,12 +1,12 @@
-import { useContext } from "react";
-
-import { FilterContext } from "../../contexts/FilterContext";
 import "./Filters.css"
+import { useDispatch } from "react-redux";
+import { CLEAR_ALL_FILTERS } from "../../Redux/FilterSlice";
+
 
 export const ClearButton = () => {
-  const { dispatchFilters } = useContext(FilterContext);
+  const dispatch = useDispatch()
   const clearAllFilters = () => {
-    dispatchFilters({type : "CLEAR_ALL_FILTERS"})
+    dispatch(CLEAR_ALL_FILTERS())
   }
   return (
     <>

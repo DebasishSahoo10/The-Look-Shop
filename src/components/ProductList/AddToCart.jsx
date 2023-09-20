@@ -1,14 +1,16 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import "./ProductList.css";
-import { AuthContext } from "../../contexts/AuthContext";
-import { DataContext } from "../../contexts/DataContext";
 import { cartHandler } from "../../utils/clickHandlers";
+import { useDispatch, useSelector } from "react-redux";
 
 export const AddToCart = ({ item }) => {
-  const { state, dispatch } = useContext(DataContext);
-  const { authToken, isLoggedin } = useContext(AuthContext);
+  const data = useSelector(state => state.data)
+  const dispatch = useDispatch()
+  const auth = useSelector(state => state.auth)
+  const authToken = auth.authToken
+  const isLoggedin = auth.isLoggedin
   const [ isDisable, SetIsDisable] = useState(false)
   const cartClick = () => {
     cartHandler(item, authToken, dispatch)
@@ -18,7 +20,7 @@ export const AddToCart = ({ item }) => {
     <>
       {isLoggedin ? (
         <>
-          {state.cart.some((prod) => prod.id === item.id) ? (
+          {data.cart.some((prod) => prod.id === item.id) ? (
             <NavLink to="/cart">
               <button>Go to Cart</button>
             </NavLink>

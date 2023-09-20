@@ -1,8 +1,6 @@
 import {NavLink} from 'react-router-dom'
-import { useContext } from 'react';
-
 import "./Nav.css"
-import { AuthContext } from '../../contexts/AuthContext';
+import { useSelector } from 'react-redux';
 
 const getNavLinkStyle = ({isActive}) => {
   if (isActive) {
@@ -14,7 +12,8 @@ const getNavLinkStyle = ({isActive}) => {
 };
 
 export const Nav = () => {
-  const {isLoggedin} = useContext(AuthContext)
+  const auth = useSelector(state => state.auth)
+  const isLoggedin = auth.isLoggedin
   return (
     <nav className="nav">
       <div>

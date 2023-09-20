@@ -1,16 +1,15 @@
-import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 import "./Categories.css";
-import { DataContext } from "../../contexts/DataContext";
-import { FilterContext } from "../../contexts/FilterContext";
+import { useDispatch, useSelector } from "react-redux";
+import { SET_GENDER } from "../../Redux/FilterSlice";
 
 export const CategorySection = ({ gender }) => {
-  const { state } = useContext(DataContext);
-  const { dispatchFilters } = useContext(FilterContext);
+  const data = useSelector(state => state.data)
+  const dispatch = useDispatch()
   const navigate = useNavigate();
   const handleCategoryNavigate = (gender) => {
-    dispatchFilters({ type: "SET_GENDER", payload: gender });
+    dispatch(SET_GENDER(gender));
     navigate("/products");
   };
   return (
@@ -26,7 +25,7 @@ export const CategorySection = ({ gender }) => {
         </p>
       </div>
       <ul className="category_card-container">
-        {state.products
+        {data.products
           .filter((item) => item.gender === gender)
           .slice(0, 4)
           .map((item) => (

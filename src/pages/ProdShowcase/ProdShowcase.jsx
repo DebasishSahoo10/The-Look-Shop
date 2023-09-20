@@ -1,5 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import { DataContext } from "../../contexts/DataContext";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Nav } from "../../components/Nav/Nav";
 import { Logo } from "../../components/Logo/Logo";
@@ -7,14 +6,15 @@ import "./ProdShowcase.css";
 import '../Cart/Cart.css'
 import { AddToCart } from "../../components/ProductList/AddToCart";
 import { AddToWishlist } from "../../components/ProductList/AddToWishlist";
+import { useSelector } from "react-redux";
 
 const ProdShowcase = () => {
-  const { state } = useContext(DataContext);
+  const data = useSelector(state => state.data)
   const { prodID } = useParams();
   const [prod, setProd] = useState({});
   useEffect(() => {
-    setProd(state.products.find((item) => item.id === prodID));
-  }, [state.products, prodID]);
+    setProd(data.products.find((item) => item.id === prodID));
+  }, [data.products, prodID]);
   return (
     <>
       <Logo />

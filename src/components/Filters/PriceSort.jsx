@@ -1,11 +1,13 @@
-import { useContext } from "react";
-import { FilterContext } from "../../contexts/FilterContext";
 import "./Filters.css"
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_PRICE_SORT } from "../../Redux/FilterSlice";
 
 export const PriceSort = () => {
-  const { filters, dispatchFilters } = useContext(FilterContext);
+  const filters = useSelector(state => state.filters)
+  const dispatch = useDispatch()
+
   const handlePriceSortClick = (sortType) => {
-    dispatchFilters({type : "ADD_PRICE_SORT", payload : sortType})
+    dispatch(ADD_PRICE_SORT(sortType))
   }
   return (
     <>

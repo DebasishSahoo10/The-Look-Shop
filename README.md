@@ -20,9 +20,10 @@ To get your own copy of the Project (to run it on your local server). First Fork
     ```
 and there you go ✳️
 ## 🚀 Features and Utilities
+- **Redux Toolkit** (for the Global State Management to achieve lesser code and more maintainable code)
 - **SPA** (with the help of React Router this app can do everything without a reload after the first render)
 - **Authorisation and Private Routes** (some routes in the app are private and can't be accessed without a login. and as of authorisation goes, we can signup and then login or can just use Test Credential button)
-- **React Context** (to make a single state accessible to every route/component in the app, things like AUTH, Product Database and Filters put in as Contexts)
+- **React Context** <strike>(to make a single state accessible to every route/component in the app, things like AUTH, Product Database and Filters put in as Contexts)</strike> I have updated the global state manager to Redux Toolkit.
 - **Razorpay Integration** (When you click on Checkout button Razorpay will pop up. Currently it works in Test Mode of Razorpay API.)
 - **Debouncing in Search** (Search will only work if time between two key presses is 500ms. It is used to limit API calls to reduce stress on backend)
 - **MockBee Backend** (this gives us place to put database and APIs to get it or manage it)

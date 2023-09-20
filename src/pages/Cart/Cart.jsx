@@ -1,34 +1,34 @@
-import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
 import "./Cart.css";
 import { Logo } from "../../components/Logo/Logo";
 import { Nav } from "../../components/Nav/Nav";
-import { DataContext } from "../../contexts/DataContext";
 import {
   cartItemDecrement,
   cartItemIncrement,
   cartItemRemoval
 } from "../../utils/clickHandlers";
-import { AuthContext } from "../../contexts/AuthContext";
 import { AddToWishlist } from "../../components/ProductList/AddToWishlist";
 import { PriceCheckout } from "./PriceCheckout";
+import { useDispatch, useSelector } from "react-redux";
 
 const Cart = () => {
-  const { state, dispatch } = useContext(DataContext);
-  const { authToken } = useContext(AuthContext);
+  const data = useSelector(state => state.data)
+  const dispatch = useDispatch()
+  const auth = useSelector(state => state.auth)
+  const authToken = auth.authToken
   return (
     <div>
       <Logo />
       <Nav />
       <div className="cart">
-        {state.cart.length === 0 ? (
+        {data.cart.length === 0 ? (
           <h2>Your Cart Is Empty</h2>
         ) : (
           <>
             <div className="cart-container">
-              {state.cart &&
-                state.cart.map((item) => {
+              {data.cart &&
+                data.cart.map((item) => {
                   return (
                     <li key={item.id}>
                       <img src={item.img} alt={`look for ${item.name}`} width={"150px"} height={"200px"}/>
