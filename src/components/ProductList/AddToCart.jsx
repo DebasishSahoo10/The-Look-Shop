@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-
 import "./ProductList.css";
 import { cartHandler } from "../../utils/clickHandlers";
 import { useDispatch, useSelector } from "react-redux";
