@@ -18,7 +18,6 @@ const Login = () => {
   const [userInput, setUserInput] = useState({ email: "", password: "" });
   const [error, setError] = useState(false);
   const [loginReady, setLoginReady] = useState(false)
-  useEffect(()=>console.log(auth), [auth])
   const loginClickHandler = () => {
     setLoginReady(true)
     setTimeout(()=>setError(true), 2000);
@@ -53,7 +52,7 @@ const Login = () => {
           console.log(error);
         }
       })()
-    };
+    }
   }, [loginReady]);
   return (
     <>
@@ -78,7 +77,7 @@ const Login = () => {
               Login using Test Credentials
             </button>
             <div>
-              <p>Haven't signup yet?</p>
+              <p>Have not signup yet?</p>
               <NavLink to="/signup">
                 <button>Sign Up</button>
               </NavLink>

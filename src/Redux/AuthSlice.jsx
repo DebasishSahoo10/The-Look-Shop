@@ -21,7 +21,6 @@ export const AuthSlice = createSlice({
     }
   }
 });
-
 export const SET_USER = createAction('auth/SET_USER', (user) => ({
     payload : user
 }))
