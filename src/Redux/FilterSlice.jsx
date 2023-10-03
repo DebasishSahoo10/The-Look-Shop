@@ -32,7 +32,7 @@ export const FilterSlice = createSlice({
     ADD_SEARCH : (state, action) => {
         state.search = action.payload.toLowerCase()
     },
-    CLEAR_ALL_FILTERS : (state, action) => {
+    CLEAR_ALL_FILTERS : (state) => {
         state.gender = ""
         state.category = []
         state.priceSort = ""
