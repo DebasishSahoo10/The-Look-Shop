@@ -2,13 +2,13 @@
 
 
 ## 🙂 About
-This Project has been coded to showcase React Skills (Frontend in general) under the Fourth Asignment of NeoGcamp. So for the front end is on React and to mock the backend (mostly API calls) [MockBee](https://mockbee.netlify.app/) has been used. And to put User Authorisation in place JWT Tokens has been used. The Template that has been used is `Create-React-App` as MockBee natively supports that only. Yes, as of now that template is not reccommended anymore, `Vite`'s React template is more optimised, but functionality wise the project would have been no-different.
+This Project has been coded to showcase React Skills (Frontend in general) under the Fourth Asignment of NeoGcamp. So for the front end is on React and to mock the backend (mostly API calls) [MockBee](https://mockbee.netlify.app/) has been used. And to put User Authorisation in place JWT Tokens has been used. The Template that has been used is `Vite`'s React template with vanilla JavaScript.
 
 ## 🏁 Getting Started
 To get your own copy of the Project (to run it on your local server). First Fork this repo. then open the repo in your choice of IDE. then follow below steps
 1. create a .env file in the root folder and put this in that file
     ```
-     REACT_APP_JWT_SECRET = "ANY_STRING_WILL_GO_HERE_IN_THIS_FORMAT"
+     VITE_JWT_SECRET = "ANY_STRING_WILL_GO_HERE_IN_THIS_FORMAT"
     ```
 2. Install NPM Modules
     ```
