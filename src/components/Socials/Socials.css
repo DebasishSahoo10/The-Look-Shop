@@ -1,0 +1,48 @@
+.social-board {
+  width: 100%;
+  height: 300px;
+  background-color: #D0F032;
+  color: black;
+  border: 4px solid black;
+  border-top: 0px;
+  box-sizing: border-box;
+  font-family: "Syne", sans-serif;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.social-board div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+.social-board p {
+  margin: 0;
+}
+.social-board a {
+  background-color: black;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.twitter {
+  color: #1DA1F2;
+}
+.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.github {
+  color: white;
+}
+@media screen and (max-width: 600px) {
+  .social-board {
+    font-size: 20px;
+  }
+}

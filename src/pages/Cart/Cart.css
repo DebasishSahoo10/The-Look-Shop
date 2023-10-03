@@ -1,0 +1,117 @@
+p {
+  font-family: "Syne", sans-serif;
+}
+.cart li {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  border: 4px solid black;
+  border-radius: 10px;
+  padding-right: 5px;
+}
+img {
+  border-radius: 6px 0px 0px 6px;
+  height: 100%;
+}
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+li button {
+  font-family: "Syne", sans-serif;
+  width: 100%;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+li button:nth-child(1) {
+  background-color: transparent;
+}
+li button:nth-child(2) {
+  background-color: #d0f032;
+}
+.cart {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  font-family: "Syne", sans-serif;
+  margin: 10px;
+}
+li p {
+  margin-top: 0;
+}
+li p:nth-child(1) {
+  margin-top: 5px;
+}
+.price-container button {
+  font-family: "Syne", sans-serif;
+  width: 100%;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  font-size: medium;
+  background-color: transparent;
+}
+.price-container button:nth-of-type(2) {
+  background-color: #d0f032;
+}
+.price-container {
+  border: 4px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  height: max-content;
+  width: 250px;
+}
+.price-container p {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: large;
+  max-width: 100%;
+}
+.cart-btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.cart-btn-container div {
+  display: flex;
+  gap: 5px;
+}
+select {
+  width: 100%;
+  font-family: "Space Grotesk", sans-serif;
+  background-color: #d0f032;
+  border-radius: 5px;
+  height: 30px;
+}
+option {
+  font-family: "Space Grotesk", sans-serif;
+}
+.address-container input {
+  width: 98%;
+}
+.address-container {
+  border-radius: 6px;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: #d0f032;
+  height: 170px;
+}
+.address-container button {
+  background-color: white;
+}
+@media screen and (max-width: 856px) {
+  .price-container {
+    width: 570px;
+  }
+  .cart {
+    flex-wrap: wrap-reverse;
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .price-container {
+    width: 100%;
+  }
+}

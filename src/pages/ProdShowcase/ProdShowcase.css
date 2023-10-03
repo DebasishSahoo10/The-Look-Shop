@@ -1,0 +1,43 @@
+.prod-card {
+  display: flex;
+  gap: 20px;
+  max-width: 550px;
+  border: 4px solid black;
+  border-radius: 10px;
+  /* height: auto; */
+  margin: 20px;
+  padding-right: 10px;
+}
+.prod-card img {
+  width: 150px;
+  height: auto;
+}
+.prod-card p {
+  font-family: "Space Grotesk", sans-serif;
+  margin-top: 0px;
+}
+.prod-card p:nth-child(1) {
+  font-family: "Syne", sans-serif;
+  margin-bottom: 0px;
+  font-size: large;
+  margin-top: 5px;
+}
+.product-card-details {
+  padding-right: 20px;
+}
+.prod-card-holder {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prod-card button {
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 100%;
+  font-family: "Syne", sans-serif;
+  font-size: 15px;
+  margin-bottom: 5px;
+}

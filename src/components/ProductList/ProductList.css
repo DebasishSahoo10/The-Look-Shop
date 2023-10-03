@@ -1,0 +1,8 @@
+.product-list_card-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.product-list_card-details a {
+  width: 100%;
+}

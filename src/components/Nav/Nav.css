@@ -1,0 +1,41 @@
+.nav {
+  font-family: "Syne", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  border: 4px solid black;
+  border-top: 0px;
+  box-sizing: border-box;
+  grid-row: 2 / span 1;
+  height: 60px;
+}
+.nav div:nth-child(1) {
+  display: flex;
+  gap: 20px;
+}
+.nav button {
+  height: 100%;
+  padding: 15px 25px 15px 25px;
+  font-size: 16px;
+  font-family: "Syne", sans-serif;
+  border: 0px;
+  border-left: 4px solid black;
+  background-color: black;
+  color: white;
+}
+
+@media screen and (max-width : 475px) {
+  .nav {
+    flex-direction: column;
+    height: 100px;
+    padding-left: 0px;
+  }
+  .nav div:nth-child(1) {
+    justify-content: space-evenly;
+  }
+  .nav button {
+    width: 100%;
+    border: 0px;
+    height: 95%;
+  }
+}

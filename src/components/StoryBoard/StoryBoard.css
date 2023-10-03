@@ -1,0 +1,32 @@
+.story-board {
+  grid-row: 5 / span 1;
+  width: 100%;
+  height: 300px;
+  background-color: #7045db;
+  border: 4px solid black;
+  border-top: 0px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.story-board p:nth-child(1) {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+}
+.story-board p:nth-child(2) {
+  font-family: "Syne Mono", monospace;
+  font-size: 30px;
+  max-width: 70%;
+  text-align: center;
+  margin-top: 0px;
+}
+@media screen and (max-width: 600px) {
+  .story-board p:nth-child(2) {
+    font-size: 22px;
+    max-width: 90%;
+  }
+}
